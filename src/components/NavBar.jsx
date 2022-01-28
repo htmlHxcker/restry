@@ -4,7 +4,7 @@ function NavBar() {
   return (
     <div className="flex">
       <h1>Restry</h1>
-      <div>
+      <div className="flex">
         <p>Stats</p>
         <p>Account</p>
       </div>
