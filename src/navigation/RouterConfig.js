@@ -1,17 +1,18 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Home from '../pages/Home';
 import {
   ACCOUNT, LOGIN, ROOT, STATS,
 } from './CONSTANTS';
 
 function RouterConfig() {
   return (
-    <Switch>
-      <Route exact path={ROOT} />
+    <Routes>
+      <Route exact path={ROOT} element={<Home />} />
       <Route exact path={LOGIN} />
       <Route exact path={ACCOUNT} />
       <Route exact path={STATS} />
-    </Switch>
+    </Routes>
   );
 }
 
