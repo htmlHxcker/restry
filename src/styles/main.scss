@@ -10,4 +10,8 @@
 
 /* LAYOUT- Structure and layout files.
 ========================================================================== */
-@import 'layout/_flex.css'
+@import 'layout/flex';
+
+/* COMPONENTS - Componets re-used across the app
+========================================================================== */
+@import 'components/navbar'
