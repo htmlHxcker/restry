@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from '../../components/NavBar';
+import getCurrentTime from '../../config/getCurrentTime';
 
 function Home() {
+  const [currentTime, setCurrentTime] = useState(getCurrentTime());
+  setInterval(() => {
+    setCurrentTime(getCurrentTime);
+  }, 1000);
+
   return (
     <>
       <NavBar />
-      <h2>Hello, User</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <div>
+        <h2>{currentTime.time}</h2>
+        <h3>{currentTime.greeting}</h3>
+      </div>
+
     </>
   );
 }
