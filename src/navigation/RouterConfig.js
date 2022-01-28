@@ -8,7 +8,7 @@ import {
 function RouterConfig() {
   return (
     <Routes>
-      <Route exact path={ROOT} element={<Home />} />
+      <Route exact path={ROOT} element={Home()} />
       <Route exact path={LOGIN} />
       <Route exact path={ACCOUNT} />
       <Route exact path={STATS} />
