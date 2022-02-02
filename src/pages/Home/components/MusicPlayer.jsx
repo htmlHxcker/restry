@@ -55,7 +55,7 @@ function MusicPlayer({ tracks }) {
   );
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center player-background">
       <div>
         <h2 className="title">{title}</h2>
         <h3 className="artist">{artist}</h3>
@@ -85,7 +85,7 @@ function MusicPlayer({ tracks }) {
 }
 
 MusicPlayer.propTypes = {
-  tracks: PropTypes.arrayOf([]).isRequired,
+  tracks: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 
 export default MusicPlayer;
