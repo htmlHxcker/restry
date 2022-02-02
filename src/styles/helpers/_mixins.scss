@@ -2,3 +2,8 @@
     background-color: 	hsla(0, 0%, 100%, 0.3);
 	backdrop-filter: blur($opacity);
 }
+
+@mixin rounded-corner($arc){
+    border-radius: $arc;
+}
+
