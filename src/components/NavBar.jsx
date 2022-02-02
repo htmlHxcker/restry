@@ -4,13 +4,13 @@ import { HiOutlineUser } from 'react-icons/hi';
 
 function NavBar() {
   return (
-    <div className="flex justify-between items-center blur-background">
+    <header className="flex justify-between items-center navbar-background">
       <h1>Restry</h1>
       <div className="flex">
         <IoMdStats size={30} />
         <HiOutlineUser size={30} />
       </div>
-    </div>
+    </header>
   );
 }
 
