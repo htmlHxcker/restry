@@ -1,21 +1,29 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { FiPause, FiPlay } from 'react-icons/fi';
 
 function MusicPlayer({ tracks }) {
   const [trackIndex, setTrackIndex] = useState(0);
-  const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const {
-    title, artist, image, audioSrc,
+    title, artist, audioSrc,
   } = tracks[trackIndex];
 
   const audioRef = useRef(new Audio(audioSrc));
   const intervalRef = useRef();
   const isReady = useRef(false);
 
-  const { duration } = audioRef.current;
+  const toNextTrack = () => {
+    if (trackIndex < tracks.length - 1) {
+      setTrackIndex(trackIndex + 1);
+    } else {
+      setTrackIndex(0);
+    }
+  };
+  audioRef.current.addEventListener('ended', () => {
+    toNextTrack();
+  });
 
   useEffect(() => {
     if (isPlaying) {
@@ -25,32 +33,59 @@ function MusicPlayer({ tracks }) {
     }
   }, [isPlaying]);
 
-  audioRef.current.addEventListener('ended', () => {
-    if (trackIndex < tracks.length - 1) {
-      setTrackIndex(trackIndex + 1);
+  useEffect(() => {
+    audioRef.current.pause();
+
+    audioRef.current = new Audio(audioSrc);
+
+    if (isReady.current) {
+      audioRef.current.play();
+      setIsPlaying(true);
     } else {
-      setTrackIndex(0);
+      isReady.current = true;
     }
-  });
+  }, [trackIndex]);
+
+  useEffect(
+    () => () => {
+      audioRef.current.pause();
+      clearInterval(intervalRef.current);
+    },
+    [],
+  );
 
   return (
-    <div className="flex">
-      <img src={image} alt={`Cover art for ${title} by ${artist}`} className="cover-art" />
+    <div className="flex items-center">
       <div>
-        <h2>{title}</h2>
-        <h3>{artist}</h3>
+        <h2 className="title">{title}</h2>
+        <h3 className="artist">{artist}</h3>
       </div>
-      <div className="flex">
-        {isPlaying ? (
-          <button type="button" aria-label="Play" onClick={() => { setIsPlaying(true); }}><FiPlay /></button>
-        ) : (
-          <button type="button" aria-label="Pause" onClick={() => { setIsPlaying(false); }}><FiPause /></button>
-        )}
-      </div>
+
+      {isPlaying ? (
+        <button
+          type="button"
+          className="pause"
+          onClick={() => setIsPlaying(false)}
+          aria-label="Pause"
+        >
+          <FiPause />
+        </button>
+      ) : (
+        <button
+          type="button"
+          className="play"
+          onClick={() => setIsPlaying(true)}
+          aria-label="Play"
+        >
+          <FiPlay />
+        </button>
+      )}
     </div>
   );
 }
+
 MusicPlayer.propTypes = {
   tracks: PropTypes.arrayOf([]).isRequired,
 };
+
 export default MusicPlayer;
