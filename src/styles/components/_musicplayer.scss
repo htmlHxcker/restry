@@ -1,3 +1,8 @@
 .player-background{
     @include blur-background()
 }
+.player{
+    @include rounded-corner(2rem);
+    padding: 2rem;
+    margin: 3rem;
+}
