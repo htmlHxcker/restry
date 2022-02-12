@@ -7,3 +7,7 @@
     border-radius: $arc;
 }
 
+@mixin grid-position($postion: center){
+    justify-self: $postion;
+    align-self: $postion;
+}
