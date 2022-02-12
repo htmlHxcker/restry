@@ -55,7 +55,7 @@ function MusicPlayer({ tracks }) {
   );
 
   return (
-    <div className="flex items-center player">
+    <div className="flex items-center justify-between player ">
       <div>
         <h2 className="title">{title}</h2>
         <h3 className="artist">{artist}</h3>
