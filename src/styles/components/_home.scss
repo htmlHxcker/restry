@@ -1,5 +1,15 @@
-.footer{
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
+.logo{
+    grid-area: logo;
+}
+
+.main{
+    grid-area: main;
+    @include grid-position();
+}
+
+.todo{
+    grid-area: todo;
+    height: max-content;
+    width: max-content;
+    @include grid-position();
 }
