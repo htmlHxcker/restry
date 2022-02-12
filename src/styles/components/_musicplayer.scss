@@ -1,7 +1,14 @@
 .player{
-    @include blur-background();
     @include rounded-corner(2rem);
     @extend %box-shadow;
-    padding: 2rem;
-    margin: 3rem;
+    background-color: hsl($clr-purple-900);
+    padding: 1rem 1.5rem;
+    margin: 2rem 1.5rem 2rem 2rem ;
+    h2{
+        font-size: 16px;
+    }
+    h3{
+        font-size: 13px;
+    }
+    grid-area: player;
 }
