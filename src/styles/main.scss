@@ -9,6 +9,7 @@
 ========================================================================== */
 
 @import 'base/reset';
+@import 'base/typography';
 
 /* LAYOUT- Structure and layout files.
 ========================================================================== */
@@ -17,8 +18,5 @@
 
 /* COMPONENTS - Componets re-used across the app
 ========================================================================== */
-@import 'components/navbar';
 @import 'components/home';
-@import 'components/musicplayer';
 @import 'components/buttons';
-@import 'components/startpomodoro';
