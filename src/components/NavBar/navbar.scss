@@ -1,0 +1,36 @@
+@import '../../styles/main.scss';
+
+h1{
+    display: none;
+}
+nav{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    color: hsl($clr-white);
+    li{
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    li:hover{
+        color: hsl($clr-cavern-pink);
+        cursor: pointer;
+    }
+
+}
+
+ @media  only screen and (min-width: $mobile-lg) {
+    h1{
+        display: block;
+    }
+    nav{
+        position: static;
+        text-align: right;
+        li{
+            padding: 2rem;
+        }
+    }
+}
