@@ -1,4 +1,6 @@
 .btn{
     @include rounded-corner(1em);
-    padding: 0.7em;
+    background-color: hsl($clr-cavern-pink);
+    color: hsl($clr-white);
+    @extend %box-shadow;
 }
