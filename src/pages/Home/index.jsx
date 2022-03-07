@@ -1,9 +1,9 @@
 import React from 'react';
-import NavBar from '../../components/NavBar';
+import Tasks from './components/Tasks';
 
 function Home() {
   return (
-    <NavBar />
+    <Tasks />
   );
 }
 
