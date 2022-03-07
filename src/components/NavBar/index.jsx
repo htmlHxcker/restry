@@ -1,16 +1,19 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { ACHIEVEMENTS, ROOT, SETTINGS } from '../../navigation/CONSTANTS';
 import './navbar.scss';
 
 function NavBar() {
   return (
     <header className="flex justify-between items-center navbar-background">
-      <h1 className="heading-1">Restry</h1>
+      <h1 className="logo">Restry</h1>
       <nav>
-        <li className="nav-item">
-          Home
-        </li>
-        <li className="nav-item">Tasks</li>
-        <li className="nav-item">Achievement</li>
+
+        <NavLink to={ROOT} className="nav-item">Home</NavLink>
+        <NavLink to={ACHIEVEMENTS} className="nav-item">
+          Achievements
+        </NavLink>
+        <NavLink to={SETTINGS} className="nav-item">Settings</NavLink>
       </nav>
     </header>
   );
