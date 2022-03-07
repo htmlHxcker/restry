@@ -1,6 +1,6 @@
 @import '../../styles/main.scss';
 
-h1{
+.logo{
     display: none;
 }
 nav{
@@ -10,12 +10,16 @@ nav{
     left: 0;
     text-align: center;
     color: hsl($clr-white);
-    li{
+
+    .nav-item{
         display: inline-block;
+        text-decoration: none;
+        color: hsl($clr-white);
         padding: 1rem;
     }
 
-    li:hover{
+    .nav-item:hover,
+    .nav-item:active{
         color: hsl($clr-cavern-pink);
         cursor: pointer;
     }
@@ -23,13 +27,13 @@ nav{
 }
 
  @media  only screen and (min-width: $mobile-lg) {
-    h1{
+    .logo{
         display: block;
     }
     nav{
         position: static;
         text-align: right;
-        li{
+        .nav-item{
             padding: 2rem;
         }
     }
