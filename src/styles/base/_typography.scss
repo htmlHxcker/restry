@@ -1,0 +1,26 @@
+.heading-1{
+    font-size: $fs-900;
+}
+.heading-2{
+    font-size: $fs-800;
+}
+.heading-3{
+    font-size: $fs-700;
+}
+.heading-4{
+    font-size: $fs-600;
+}
+.heading-5{
+    font-size: $fs-500;
+}
+
+.paragraph{
+    font-size: $fs-400;
+}
+
+.text-white{
+    color: hsl($clr-white);
+}
+.text-light-blue{
+    color: hsl($clr-light-blue-grey);
+}

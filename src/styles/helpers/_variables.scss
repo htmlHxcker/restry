@@ -1,8 +1,9 @@
 /*colors */
-$clr-indigo-900: 259 71% 16%;
-$clr-peach-900: 5 50% 95%;
-$clr-purple-900: 267 51% 50%;
-$clr-gun-powder-900: 237 14% 30%;
+$clr-ebony-clay: 230 33% 21%;
+$clr-white: 60 100% 100%;
+$clr-light-blue-grey: 230 58% 82%;
+$clr-cavern-pink: 351 60% 83%;
+
 
 
 /* font sizes */
@@ -13,6 +14,13 @@ $fs-700: 2.75rem;
 $fs-800: 3rem;
 $fs-900: 3.5rem;
 
+/*  Breakpoints */
+$mobile-sm: 320px;
+$mobile-md: 375px;
+$mobile-lg: 425px;
+$tablet:768px;
+$laptop:1024px;
+
 /* font families */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-$ff-poppins: 'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+$ff-dm-sans: 'DM Sans', sans-serif;

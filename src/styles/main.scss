@@ -2,8 +2,20 @@
 ========================================================================== */
 
 @import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/placeholders';
 
 /* BASE - Resets
 ========================================================================== */
 
 @import 'base/reset';
+@import 'base/typography';
+
+/* LAYOUT- Structure and layout files.
+========================================================================== */
+@import 'layout/flex';
+@import 'layout/grid';
+
+/* COMPONENTS - Componets re-used across the app
+========================================================================== */
+@import 'components/buttons';
