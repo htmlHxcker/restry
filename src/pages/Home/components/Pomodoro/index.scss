@@ -1,0 +1,11 @@
+@import '../../../../styles/main.scss';
+
+.pomodoro{
+    display: none;
+}
+
+@media only screen and (min-width: $laptop) {
+    .pomodoro{
+        display: block;
+    }
+}
