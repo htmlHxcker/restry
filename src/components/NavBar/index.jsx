@@ -5,7 +5,7 @@ import './navbar.scss';
 
 function NavBar() {
   return (
-    <header className="flex justify-between items-center navbar-background">
+    <header className="flex justify-between items-center">
       <h1 className="logo">Restry</h1>
       <nav>
 
