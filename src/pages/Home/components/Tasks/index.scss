@@ -1,5 +1,8 @@
 @import '../../../../styles/main.scss';
 
+.tasks{
+    min-width: 100%;
+}
 .task-card{
     background-color: hsl($clr-light-blue-grey);
     list-style: none;
@@ -11,9 +14,17 @@
 ul{
     padding: 0;
     margin-top: 2rem;
+    max-height: 60vh;
+    overflow-y: scroll;
 }
 .new-task-btn{
     width: 80%;
     margin: 2rem;
     padding: 0.6rem 0;
+}
+
+@media only screen and (min-width: $mobile-lg){
+    .tasks{
+        min-width: 50%;
+    }
 }
