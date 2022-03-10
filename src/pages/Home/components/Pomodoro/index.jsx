@@ -5,8 +5,12 @@ import Timer from './Timer';
 function Pomodoro() {
   return (
     <div className="pomodoro">
-      <Timer />
-      <div><button type="submit" className="btn">Start Pomodoro</button></div>
+      <Timer size={250} strokeWidth={20} percentage={100} />
+      <div className="flex">
+        <button type="submit" className="primary--btn">▶</button>
+        <button type="submit" className="primary--btn">⏸</button>
+        <button type="submit" className="primary--btn">Start Pomodoro</button>
+      </div>
     </div>
   );
 }
