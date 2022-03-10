@@ -1,20 +1,17 @@
-.outer-rim{
-    height:100px;
-    width: 100px;
-    position: relative;
-    border: solid green 1px;
-    text-align: center;
+@import '../../../../styles/main.scss';
+
+.circular-path{
+    fill:none;
+    stroke: #ccc;
+    
+
 }
 
-.inner-rim{
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left:50%;
-    height: 80px;
-    width: 80px;
-    margin-top: -40px;
-    margin-left: -40px;
-    background-color: red;
-    border-radius: 100%;
+.progress{
+    stroke:hsl($clr-cavern-pink);
+}
+
+.timer-text{
+    fill: hsl($clr-light-blue-grey);
+    font-size: $fs-500;
 }
