@@ -6,6 +6,7 @@
 
 @media only screen and (min-width: $laptop) {
     .pomodoro{
-        display: block;
+        display: grid;
+        place-items: center;
     }
 }
