@@ -15,7 +15,7 @@ function Tasks() {
           <li className="task-card text-white">Task 4</li>
         </ul>
       </div>
-      <button type="button" className="btn new-task-btn">New Task</button>
+      <button type="button" className="primary--btn">New Task</button>
     </div>
   );
 }
