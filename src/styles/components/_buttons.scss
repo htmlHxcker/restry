@@ -1,6 +1,12 @@
-.btn{
-    @include rounded-corner(1em);
-    background-color: hsl($clr-cavern-pink);
-    color: hsl($clr-ebony-clay);
-    @extend %box-shadow;
+.primary--btn{
+    @include button(hsl($clr-cavern-pink));
+    width: 80%;
+    color:hsl($clr-ebony-clay);
+    margin: 2rem;
+    padding: 0.6rem;
+}
+
+.primary--btn:hover{
+    cursor: pointer;
+    background-color: hsl($clr-light-blue-grey);
 }
