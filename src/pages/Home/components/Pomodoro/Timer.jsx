@@ -1,21 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './timer.scss';
 
-function Timer() {
+function Timer({
+  size, strokeWidth, percentage, color,
+}) {
+  const viewBox = `0 0 ${size} ${size}`;
+  const radius = (size - strokeWidth) / 2;
   return (
-    <div className="outer-rim">
-      <div className="inner-rim" />
-      <div className="timer">25:00</div>
-      <div className="border">
-        <div className="fill left">
-          <div className="progress" />
-        </div>
-        <div className="fill right">
-          <div className="progress" />
-        </div>
-      </div>
-    </div>
+    <svg width={size} height={size} viewBox={viewBox}>
+      <circle fill="none" stroke="#ccc" cx={size / 2} cy={size / 2} r={radius} strokeWidth={`${strokeWidth}px`} />
+    </svg>
   );
 }
 
+Timer.propTypes = {
+  size: PropTypes.number.isRequired,
+  strokeWidth: PropTypes.number.isRequired,
+  percentage: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+};
 export default Timer;
