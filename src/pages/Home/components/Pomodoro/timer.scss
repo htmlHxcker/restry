@@ -1,10 +1,8 @@
 @import '../../../../styles/main.scss';
 
-.circular-path{
-    fill:none;
+.circle-container{
+    fill:hsl($clr-light-blue-grey);
     stroke: #ccc;
-    
-
 }
 
 .progress{
@@ -12,6 +10,6 @@
 }
 
 .timer-text{
-    fill: hsl($clr-light-blue-grey);
+    fill: hsl($clr-ebony-clay);
     font-size: $fs-500;
 }

@@ -13,7 +13,7 @@ function Timer({
   return (
     <svg width={size} height={size} viewBox={viewBox}>
       <circle
-        className="circular-path"
+        className="circle-container"
         cx={size / 2}
         cy={size / 2}
         r={radius}
