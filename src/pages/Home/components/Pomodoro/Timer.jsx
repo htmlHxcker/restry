@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './timer.scss';
 
 function Timer({
   size, strokeWidth, percentage,
 }) {
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    setProgress(percentage);
+  }, [progress]);
+
   const viewBox = `0 0 ${size} ${size}`;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * (Math.PI * radius);
-  const dash = (percentage * circumference) / 100;
+  const dash = (progress * circumference) / 100;
 
   return (
     <svg width={size} height={size} viewBox={viewBox}>
