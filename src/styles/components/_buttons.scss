@@ -1,9 +1,8 @@
 .primary--btn{
     @include button(hsl($clr-cavern-pink));
-    width: 80%;
     color:hsl($clr-ebony-clay);
     margin: 2rem;
-    padding: 0.6rem;
+    padding: 0.6rem 2rem;
 }
 
 .primary--btn:hover{
