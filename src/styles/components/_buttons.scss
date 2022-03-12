@@ -3,6 +3,7 @@
     color:hsl($clr-ebony-clay);
     margin: 2rem;
     padding: 0.6rem 2rem;
+    @extend %box-shadow;
 }
 
 .primary--btn:hover{
