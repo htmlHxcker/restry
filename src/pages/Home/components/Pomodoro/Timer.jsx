@@ -1,56 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import './timer.scss';
+import formatTime from './useCountDown';
 
-function Timer({
-  size, strokeWidth, percentage,
-}) {
-  const [progress, setProgress] = useState(0);
-  useEffect(() => {
-    setProgress(percentage);
-  }, [progress]);
+function Timer() {
+  const [time, setTime] = useState(0);
 
-  const viewBox = `0 0 ${size} ${size}`;
-  const radius = (size - strokeWidth) / 2;
-  const circumference = 2 * (Math.PI * radius);
-  const dash = (progress * circumference) / 100;
-
+  const timeToCountFrom = 183;
+  let timeLeft = 0;
+  let timePassed = 0;
+  setInterval(() => {
+    timePassed += 1;
+    timeLeft = timeToCountFrom - timePassed;
+    setTime(formatTime(timeLeft));
+  }, 1000);
   return (
-    <svg width={size} height={size} viewBox={viewBox}>
-      <circle
-        className="circle-container"
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        strokeWidth={`${strokeWidth}px`}
-      />
-      <circle
-        className="progress"
-        fill="none"
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        strokeWidth={`${strokeWidth}px`}
-        transform={`rotate(-90 ${size / 2} ${size / 2})`}
-        strokeDasharray={[dash, circumference - dash]}
-        strokeLinecap="round"
-      />
-      <text
-        className="timer-text"
-        x="50%"
-        y="50%"
-        dy="20px"
-        textAnchor="middle"
-      >
-        {`${percentage}%`}
-      </text>
-    </svg>
+
+    <div className="timer">
+      <svg className="timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g className="timer__circle">
+          <circle className="timer__path-elapsed" cx="50" cy="50" r="45" />
+        </g>
+      </svg>
+      <span className="timer__label">{time}</span>
+    </div>
   );
 }
 
-Timer.propTypes = {
-  size: PropTypes.number.isRequired,
-  strokeWidth: PropTypes.number.isRequired,
-  percentage: PropTypes.number.isRequired,
-};
 export default Timer;
