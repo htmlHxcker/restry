@@ -8,6 +8,9 @@
     box-shadow:  -24px -24px 46px #131726,
              24px 24px 46px #353d68;
 }
+.timer__svg{
+    transform: scaleX(-1);
+}
 
 .timer__circle{
     fill: none;
@@ -16,6 +19,14 @@
 .timer__path-elapsed{
     stroke-width: 7px;
     stroke: grey;
+}
+.timer__path-remaining{
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    stroke:hsl($clr-cavern-pink);
 }
 
 .timer__label{
