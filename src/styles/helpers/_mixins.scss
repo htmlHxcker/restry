@@ -7,6 +7,13 @@
     border-radius: $arc;
 }
 
+@mixin button($color){
+    @include rounded-corner(1em);
+    background-color: hsl($clr-cavern-pink);
+    color: $color;
+    @extend %box-shadow;
+}
+
 @mixin grid-position($postion: center){
     justify-self: $postion;
     align-self: $postion;

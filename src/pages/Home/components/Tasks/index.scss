@@ -17,10 +17,8 @@ ul{
     max-height: 60vh;
     overflow-y: scroll;
 }
-.new-task-btn{
-    width: 80%;
-    margin: 2rem;
-    padding: 0.6rem 0;
+.tasks__button{
+    width: 90%;
 }
 
 @media only screen and (min-width: $mobile-lg){
