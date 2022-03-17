@@ -1,15 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import countDown from './countDown';
+import countDown, { formatTime } from './countDown';
 import './timer.scss';
 
+const FULL_DASH_ARRAY = 283;
+
 function Timer() {
-  const [timeLeft, setTimeLeft] = useState('00:00');
+  const [timeLeft, setTimeLeft] = useState(0);
+  const [strokeDashArray, setStrokeDashArray] = useState('0 283');
+
+  function calculateTimeFraction() {
+    const rawTimeFraction = timeLeft / 127;
+    return rawTimeFraction - (1 / 127) * (1 - rawTimeFraction);
+  }
+  function calculateStrokeDashArray() {
+    return `${
+      (
+        calculateTimeFraction() * FULL_DASH_ARRAY
+      ).toFixed(0)
+    } 283`;
+  }
   useEffect(() => {
     const timerId = setInterval(() => {
-      setTimeLeft(countDown(183));
+      setTimeLeft(countDown(127));
+      setStrokeDashArray(calculateStrokeDashArray());
     }, 1000);
     return () => clearInterval(timerId);
-  }, []);
+  }, [timeLeft]);
   return (
     <div className="timer">
       <svg className="timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +33,7 @@ function Timer() {
           <circle className="timer__path-elapsed" cx="50" cy="50" r="45" />
           <path
             className="timer__path-remaining"
-            strokeDasharray="283"
+            strokeDasharray={strokeDashArray}
             d="
               M 50, 50
               m -45, 0
@@ -27,7 +43,7 @@ function Timer() {
           />
         </g>
       </svg>
-      <span className="timer__label">{timeLeft}</span>
+      <span className="timer__label">{formatTime(timeLeft)}</span>
     </div>
   );
 }
