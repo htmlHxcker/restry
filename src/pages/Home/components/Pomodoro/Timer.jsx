@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import countDown, { formatTime } from './countDown';
+import countDown, { formatTime } from './utils';
 import './timer.scss';
 
 const FULL_DASH_ARRAY = 283;
