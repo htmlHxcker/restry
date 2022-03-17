@@ -7,7 +7,7 @@ export function formatTime(time) {
 let timePassed = 0;
 export default function countDown(timeLimit) {
   if (timePassed >= timeLimit) {
-    return '00:00';
+    return 0;
   }
   timePassed += 1;
   const timeLeft = timeLimit - timePassed;
