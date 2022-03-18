@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.scss';
+import './TaskItem.scss';
 
 function TaskItem({ task }) {
-  return (<li className="task-card text-white">{task}</li>);
+  return (<li className="task-item text-dark-blue">{task}</li>);
 }
 TaskItem.propTypes = {
   task: PropTypes.string.isRequired,
