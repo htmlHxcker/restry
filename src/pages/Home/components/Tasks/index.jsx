@@ -1,21 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.scss';
+import TaskItem from './TaskItem';
 
 function Tasks() {
+  const [tasks, setTasks] = useState(['Cook', 'Sleep', 'Laundry', 'Read']);
   return (
     <div className="tasks">
       <h2 className="text-white heading-3 page-title">Tasks</h2>
       <div>
         <ul>
-          <li className="task-card text-white">Complete Bojack Horseman</li>
-          <li className="task-card text-white">Cook for Tosin</li>
-          <li className="task-card text-white">Buy Food for Temi</li>
-          <li className="task-card text-white">Task 4</li>
-          <li className="task-card text-white">Task 4</li>
-          <li className="task-card text-white">Task 4</li>
+          {tasks.map((task) => <TaskItem task={task} />)}
         </ul>
       </div>
-      <button type="button" className="primary--btn tasks__button">New Task</button>
+      <button type="button" className="primary--btn tasks__button" onClick={() => (setTasks([...tasks]))}>New Task</button>
     </div>
   );
 }
