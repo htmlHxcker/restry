@@ -45,7 +45,11 @@ ul{
     .modal{
         inset:4rem 8rem;
         border-radius: 10px;
+        display: flex;
         padding: 0;
     }
-
+    .modal__title--container{
+        background-color: hsl($clr-ebony-clay);
+        width:30%;
+    }
 }

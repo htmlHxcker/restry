@@ -26,8 +26,13 @@ function Tasks() {
         className="modal"
         onRequestClose={() => setShowModal(false)}
       >
+        <div className="modal__title--container">
+          <h2 className="heading-3">New To-do Item</h2>
+        </div>
 
-        <button type="button" onClick={() => (setTasks([...tasks]))}>Test too</button>
+        <div className="modal__form--container">
+          <button type="button" onClick={() => (setTasks([...tasks]))}>Test too</button>
+        </div>
 
       </ReactModal>
       <button type="button" className="primary--btn tasks__button" onClick={() => setShowModal(true)}>New Task</button>
