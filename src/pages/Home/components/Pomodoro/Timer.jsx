@@ -9,8 +9,8 @@ function Timer() {
   const [strokeDashArray, setStrokeDashArray] = useState('0 283');
 
   function calculateTimeFraction() {
-    const rawTimeFraction = timeLeft / 127;
-    return rawTimeFraction - (1 / 127) * (1 - rawTimeFraction);
+    const rawTimeFraction = timeLeft / 1500;
+    return rawTimeFraction - (1 / 1500) * (1 - rawTimeFraction);
   }
   function calculateStrokeDashArray() {
     return `${
@@ -21,7 +21,8 @@ function Timer() {
   }
   useEffect(() => {
     const timerId = setInterval(() => {
-      setTimeLeft(countDown(127));
+      setTimeLeft(countDown(1500));
+      document.title = `⏲${formatTime(timeLeft)} | Restry`;
       setStrokeDashArray(calculateStrokeDashArray());
     }, 1000);
     return () => clearInterval(timerId);
