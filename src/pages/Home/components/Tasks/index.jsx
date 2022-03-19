@@ -22,10 +22,13 @@ function Tasks() {
         contentLabel="Modal with form for adding new tasks"
         shouldCloseOnEsc
         shouldCloseOnOverlayClick
+        overlayClassName="modal__overlay"
+        className="modal"
         onRequestClose={() => setShowModal(false)}
       >
-        Testing the modal
+
         <button type="button" onClick={() => (setTasks([...tasks]))}>Test too</button>
+
       </ReactModal>
       <button type="button" className="primary--btn tasks__button" onClick={() => setShowModal(true)}>New Task</button>
     </div>
