@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
-import './index.scss';
 import TaskItem from './TaskItem';
+import girlWithLaptop from '../../assets/girl-with-laptop.png';
+import './index.scss';
 
 function Tasks() {
   const [tasks, setTasks] = useState(['Cook', 'Sleep', 'Laundry', 'Read', 'Netflix']);
@@ -27,10 +28,14 @@ function Tasks() {
         onRequestClose={() => setShowModal(false)}
       >
         <div className="modal__title--container">
-          <h2 className="heading-3">New To-do Item</h2>
+          <h2 className="heading-4">New To-do Item</h2>
+          <img src={girlWithLaptop} alt="Girl with Laptop and a Mug" />
         </div>
 
         <div className="modal__form--container">
+          <form action="">
+            <input type="text" name="task name" />
+          </form>
           <button type="button" onClick={() => (setTasks([...tasks]))}>Test too</button>
         </div>
 
