@@ -20,6 +20,12 @@
                     ]
                 }
             }
+        ],
+        "react/jsx-props-no-spreading": [
+            0,
+            {
+                "custom": "ignore"
+            }
         ]
     },
     "env": {
