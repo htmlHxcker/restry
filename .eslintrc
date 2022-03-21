@@ -34,5 +34,8 @@
     },
     "globals": {
         "document": false
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
     }
 }
