@@ -9,6 +9,17 @@
                     ".jsx"
                 ]
             }
+        ],
+        "jsx-a11y/label-has-associated-control": [
+            1,
+            {
+                "required": {
+                    "some": [
+                        "nesting",
+                        "id"
+                    ]
+                }
+            }
         ]
     },
     "env": {
