@@ -28,7 +28,7 @@ function Tasks() {
 
   return (
     <div className="tasks">
-      <h2 className="text-white heading-3 page-title">Tasks</h2>
+      <h2 className="text--white heading--3 page__title">Tasks</h2>
       <div>
         <ul>
           {tasks.map((task) => <TaskItem task={task} key={Math.random() * 1000} />)}
@@ -44,25 +44,25 @@ function Tasks() {
         className="modal"
         onRequestClose={() => setShowModal(false)}
       >
-        <div className="modal__title--container">
-          <h2 className="heading-4">New To-do Item</h2>
+        <div className="modal__title container">
+          <h2 className="heading--4">New To-do Item</h2>
           <img src={girlWithLaptop} alt="Girl with Laptop and a Mug" />
         </div>
 
-        <div className="modal__form--container">
+        <div className="modal__form container">
           <form onSubmit={handleSubmit(handleAddition)}>
             <div>
               <label htmlFor="taskName" className="form__label">What do you want to work on?</label>
               <input type="text" name="taskName" {...register('taskName', formOptions.taskName)} className="form__input" />
-              <ErrorMessage errors={errors} name="taskName" as="p" className="error-message" />
+              <ErrorMessage errors={errors} name="taskName" as="p" className="form__error-message" />
             </div>
             <div>
               <label htmlFor="taskLength" className="form__label">For how long?</label>
               <input type="number" name="taskLength" {...register('taskLength', formOptions.taskLength)} className="form__input" />
-              <ErrorMessage errors={errors} name="taskLength" as="p" className="error-message" />
+              <ErrorMessage errors={errors} name="taskLength" as="p" className="form__error-message" />
             </div>
 
-            <button type="submit" className="primary--btn">Create Task</button>
+            <button type="submit" className="button--primary">Create Task</button>
           </form>
         </div>
 
