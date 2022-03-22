@@ -67,7 +67,7 @@ function Tasks() {
         </div>
 
       </ReactModal>
-      <button type="button" className="primary--btn tasks__button" onClick={() => setShowModal(true)}>New Task</button>
+      <button type="button" className="button--primary tasks__button" onClick={() => setShowModal(true)}>New Task</button>
     </div>
   );
 }
