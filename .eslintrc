@@ -26,6 +26,15 @@
             {
                 "custom": "ignore"
             }
+        ],
+        "no-underscore-dangle": [
+            1,
+            {
+                "allow": [
+                    "foo_",
+                    "_bar"
+                ]
+            }
         ]
     },
     "env": {
