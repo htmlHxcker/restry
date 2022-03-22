@@ -28,10 +28,9 @@
             }
         ],
         "no-underscore-dangle": [
-            1,
+            0,
             {
                 "allow": [
-                    "foo_",
                     "_bar"
                 ]
             }
