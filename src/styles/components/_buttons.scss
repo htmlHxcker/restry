@@ -1,4 +1,4 @@
-.primary--btn{
+.button--primary{
     @include button(hsl($clr-cavern-pink));
     color:hsl($clr-ebony-clay);
     margin: 2rem;
@@ -6,7 +6,7 @@
     @extend %box-shadow;
 }
 
-.primary--btn:hover{
+.button--primary:hover{
     cursor: pointer;
     background-color: hsl($clr-light-blue-grey);
 }
