@@ -9,6 +9,23 @@
                     ".jsx"
                 ]
             }
+        ],
+        "jsx-a11y/label-has-associated-control": [
+            1,
+            {
+                "required": {
+                    "some": [
+                        "nesting",
+                        "id"
+                    ]
+                }
+            }
+        ],
+        "react/jsx-props-no-spreading": [
+            0,
+            {
+                "custom": "ignore"
+            }
         ]
     },
     "env": {
@@ -17,5 +34,8 @@
     },
     "globals": {
         "document": false
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
     }
 }
