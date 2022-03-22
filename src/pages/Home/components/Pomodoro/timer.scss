@@ -16,11 +16,11 @@
     fill: none;
     stroke: none;
 }
-.timer__path-elapsed{
+.timer__path--elapsed{
     stroke-width: 7px;
     stroke: grey;
 }
-.timer__path-remaining{
+.timer__path--remaining{
     stroke-width: 7px;
     stroke-linecap: round;
     transform: rotate(90deg);
@@ -35,7 +35,5 @@
     height: 300px;
     top:0;
     display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: $fs-900;
 }

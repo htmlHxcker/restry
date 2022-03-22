@@ -31,9 +31,9 @@ function Timer() {
     <div className="timer">
       <svg className="timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <g className="timer__circle">
-          <circle className="timer__path-elapsed" cx="50" cy="50" r="45" />
+          <circle className="timer__path--elapsed" cx="50" cy="50" r="45" />
           <path
-            className="timer__path-remaining"
+            className="timer__path--remaining"
             strokeDasharray={strokeDashArray}
             d="
               M 50, 50
@@ -44,7 +44,7 @@ function Timer() {
           />
         </g>
       </svg>
-      <span className="timer__label">{formatTime(timeLeft)}</span>
+      <span className="timer__label items-center justify-center">{formatTime(timeLeft)}</span>
     </div>
   );
 }

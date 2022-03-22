@@ -7,9 +7,9 @@ function Pomodoro() {
     <div className="pomodoro">
       <Timer size={250} strokeWidth={20} percentage={100} />
       <div className="flex">
-        <button type="submit" className="primary--btn">▶</button>
-        <button type="submit" className="primary--btn">⏸</button>
-        <button type="submit" className="primary--btn">Start Pomodoro</button>
+        <button type="submit" className="button--primary">▶</button>
+        <button type="submit" className="button--primary">⏸</button>
+        <button type="submit" className="button--primary">Start Pomodoro</button>
       </div>
     </div>
   );
