@@ -23,7 +23,7 @@ nav{
         color: hsl($clr-cavern-pink);
         cursor: pointer;
     }
-    .nav-item-active{
+    .nav-item--active{
         text-decoration: underline;
         text-decoration-color: hsl($clr-cavern-pink);
         text-decoration-thickness: 3px;
