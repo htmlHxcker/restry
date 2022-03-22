@@ -44,7 +44,7 @@ function Timer() {
           />
         </g>
       </svg>
-      <span className="timer__label">{formatTime(timeLeft)}</span>
+      <span className="timer__label items-center justify-center">{formatTime(timeLeft)}</span>
     </div>
   );
 }
