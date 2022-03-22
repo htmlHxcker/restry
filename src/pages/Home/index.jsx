@@ -5,7 +5,7 @@ import './home.scss';
 
 function Home() {
   return (
-    <div className="flex home-container">
+    <div className="flex home">
       <Tasks />
       <Pomodoro />
     </div>

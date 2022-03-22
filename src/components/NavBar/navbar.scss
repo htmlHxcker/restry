@@ -12,18 +12,18 @@ nav{
     font-size: $fs-400;
     color: hsl($clr-white);
 
-    .nav-item{
+    .nav__item{
         display: inline-block;
         text-decoration: none;
         color: hsl($clr-white);
         padding: 1rem;
     }
 
-    .nav-item:hover{
+    .nav__item:hover{
         color: hsl($clr-cavern-pink);
         cursor: pointer;
     }
-    .nav-item-active{
+    .nav__item--active{
         text-decoration: underline;
         text-decoration-color: hsl($clr-cavern-pink);
         text-decoration-thickness: 3px;
@@ -38,7 +38,7 @@ nav{
     nav{
         position: static;
         text-align: right;
-        .nav-item{
+        .nav__item{
             padding: 2rem;
         }
     }
