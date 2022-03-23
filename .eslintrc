@@ -34,7 +34,8 @@
                     "_bar"
                 ]
             }
-        ]
+        ],
+        "react/react-in-jsx-scope": "off"
     },
     "env": {
         "browser": true,
