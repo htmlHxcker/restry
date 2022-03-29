@@ -1,24 +1,44 @@
 import { useState } from 'react';
 import ReactModal from 'react-modal';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import TaskItem from './TaskItem';
-import * as girlWithLaptop from '../../assets/girl-with-laptop.png';
+import girlWithLaptop from '../../assets/girl-with-laptop.png';
 import './index.scss';
 
-interface newTask {
+interface Task {
   taskName: string,
+  taskLength: number,
   done: boolean
 }
 
 function Tasks() {
-  const [tasks, setTasks] = useState<newTask[]>([{ taskName: 'Cook', done: false }, { taskName: 'Wash', done: false }, { taskName: 'Read', done: false }]);
+  const [tasks, setTasks] = useState<Task[]>(
+    [
+      {
+        taskName: 'Cook',
+        done: false,
+        taskLength: 120,
+      },
+      {
+        taskName: 'Wash',
+        done: false,
+        taskLength: 120,
+      },
+      {
+        taskName: 'Read',
+        done: false,
+        taskLength: 120,
+      },
+    ],
+  );
   const [showModal, setShowModal] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<Task>();
 
-  const handleAddition = (data: newTask) => {
+  const handleAddition: SubmitHandler<Task> = (data: Task) => {
     setTasks([...tasks, data]);
   };
+
   const formOptions = {
     taskName: { required: 'Task Name is required' },
     taskLength: {
@@ -36,7 +56,7 @@ function Tasks() {
       <h2 className="text--white heading--3 page__title">Tasks</h2>
       <div>
         <ul>
-          {tasks.map((task) => <TaskItem task={task} key={Math.random() * 1000} />)}
+          {tasks.map((task) => <TaskItem task={task.taskName} key={Math.random() * 1000} />)}
         </ul>
       </div>
 
