@@ -1,12 +1,16 @@
 {
-    "extends": "airbnb",
+    "extends": [
+        "airbnb",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
     "rules": {
         "react/jsx-filename-extension": [
             1,
             {
                 "extensions": [
-                    ".js",
-                    ".jsx"
+                    ".jsx",
+                    ".tsx"
                 ]
             }
         ],
@@ -35,7 +39,37 @@
                 ]
             }
         ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
         "react/react-in-jsx-scope": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            },
+            "alias": {
+                "map": [
+                    [
+                        "components",
+                        "./components"
+                    ]
+                ]
+            }
+        }
     },
     "env": {
         "browser": true,
