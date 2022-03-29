@@ -14,6 +14,13 @@
                 ]
             }
         ],
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-props-no-spreading": [
+            0,
+            {
+                "custom": "ignore"
+            }
+        ],
         "jsx-a11y/label-has-associated-control": [
             1,
             {
@@ -23,20 +30,6 @@
                         "id"
                     ]
                 }
-            }
-        ],
-        "react/jsx-props-no-spreading": [
-            0,
-            {
-                "custom": "ignore"
-            }
-        ],
-        "no-underscore-dangle": [
-            0,
-            {
-                "allow": [
-                    "_bar"
-                ]
             }
         ],
         "import/extensions": [
@@ -49,9 +42,23 @@
                 "tsx": "never"
             }
         ],
-        "react/react-in-jsx-scope": "off"
+        "import/no-unresolved": "error",
+        "no-underscore-dangle": [
+            0,
+            {
+                "allow": [
+                    "_bar"
+                ]
+            }
+        ]
     },
     "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx"
+            ]
+        },
         "import/resolver": {
             "node": {
                 "extensions": [
@@ -59,14 +66,6 @@
                     ".jsx",
                     ".ts",
                     ".tsx"
-                ]
-            },
-            "alias": {
-                "map": [
-                    [
-                        "components",
-                        "./components"
-                    ]
                 ]
             }
         }
