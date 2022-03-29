@@ -5,9 +5,9 @@ import { ACHIEVEMENTS, ROOT, SETTINGS } from './CONSTANTS';
 function RouterConfig() {
   return (
     <Routes>
-      <Route exact path={ROOT} element={Home()} />
-      <Route exact path={ACHIEVEMENTS} />
-      <Route exact path={SETTINGS} />
+      <Route path={ROOT} element={Home()} />
+      <Route path={ACHIEVEMENTS} />
+      <Route path={SETTINGS} />
     </Routes>
   );
 }

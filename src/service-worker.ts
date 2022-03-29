@@ -7,6 +7,13 @@
 // You can also remove this file if you'd prefer not to use a
 // service worker, and the Workbox build step will be skipped.
 
+declare global {
+  interface Window {
+    __WB_MANIFEST: any;
+    skipWaiting: any;
+  }
+}
+
 import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';

@@ -4,7 +4,7 @@ import Timer from './Timer';
 function Pomodoro() {
   return (
     <div className="pomodoro">
-      <Timer size={250} strokeWidth={20} percentage={100} />
+      <Timer />
       <div className="flex">
         <button type="submit" className="button--primary">▶</button>
         <button type="submit" className="button--primary">⏸</button>
