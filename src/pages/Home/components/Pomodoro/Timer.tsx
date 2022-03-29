@@ -5,14 +5,14 @@ import './timer.scss';
 const FULL_DASH_ARRAY = 283;
 
 function Timer() {
-  const [timeLeft, setTimeLeft] = useState(0);
-  const [strokeDashArray, setStrokeDashArray] = useState('0 283');
+  const [timeLeft, setTimeLeft] = useState<number>(0);
+  const [strokeDashArray, setStrokeDashArray] = useState<string>('0 283');
 
-  function calculateTimeFraction() {
+  function calculateTimeFraction():number {
     const rawTimeFraction = timeLeft / 1500;
     return rawTimeFraction - (1 / 1500) * (1 - rawTimeFraction);
   }
-  function calculateStrokeDashArray() {
+  function calculateStrokeDashArray():string {
     return `${
       (
         calculateTimeFraction() * FULL_DASH_ARRAY
