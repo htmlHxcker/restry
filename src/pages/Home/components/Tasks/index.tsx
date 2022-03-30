@@ -56,7 +56,7 @@ function Tasks() {
       <h2 className="text--white heading--3 page__title">Tasks</h2>
       <div>
         <ul>
-          {tasks.map((task) => <TaskItem task={task.taskName} key={Math.random() * 1000} />)}
+          {tasks.map((task) => <TaskItem task={task} key={Math.random() * 1000} />)}
         </ul>
       </div>
 
