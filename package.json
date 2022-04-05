@@ -41,6 +41,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --color",
+    "lint-staged": "lint-staged --config lint-staged.ts",
     "prepare": "husky install"
   },
   "eslintConfig": {
