@@ -1,19 +1,44 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ReactModal from 'react-modal';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import TaskItem from './TaskItem';
 import girlWithLaptop from '../../assets/girl-with-laptop.png';
 import './index.scss';
 
-function Tasks() {
-  const [tasks, setTasks] = useState(['Cook', 'Sleep', 'Laundry', 'Read', 'Netflix']);
-  const [showModal, setShowModal] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+interface Task {
+  taskName: string,
+  taskLength: number,
+  done: boolean
+}
 
-  const handleAddition = (data) => {
-    setTasks([...tasks, data.taskName]);
+function Tasks() {
+  const [tasks, setTasks] = useState<Task[]>(
+    [
+      {
+        taskName: 'Cook',
+        done: false,
+        taskLength: 120,
+      },
+      {
+        taskName: 'Wash',
+        done: false,
+        taskLength: 120,
+      },
+      {
+        taskName: 'Read',
+        done: false,
+        taskLength: 120,
+      },
+    ],
+  );
+  const [showModal, setShowModal] = useState(false);
+  const { register, handleSubmit, formState: { errors } } = useForm<Task>();
+
+  const handleAddition: SubmitHandler<Task> = (data: Task) => {
+    setTasks([...tasks, data]);
   };
+
   const formOptions = {
     taskName: { required: 'Task Name is required' },
     taskLength: {
@@ -53,12 +78,12 @@ function Tasks() {
           <form onSubmit={handleSubmit(handleAddition)}>
             <div>
               <label htmlFor="taskName" className="form__label">What do you want to work on?</label>
-              <input type="text" name="taskName" {...register('taskName', formOptions.taskName)} className="form__input" />
+              <input type="text" {...register('taskName', formOptions.taskName)} className="form__input" />
               <ErrorMessage errors={errors} name="taskName" as="p" className="form__error-message" />
             </div>
             <div>
               <label htmlFor="taskLength" className="form__label">For how long?</label>
-              <input type="number" name="taskLength" {...register('taskLength', formOptions.taskLength)} className="form__input" />
+              <input type="number" {...register('taskLength', formOptions.taskLength)} className="form__input" />
               <ErrorMessage errors={errors} name="taskLength" as="p" className="form__error-message" />
             </div>
 
