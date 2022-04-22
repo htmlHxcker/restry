@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
+
 import Home from '../pages/Home';
+
 import { ACHIEVEMENTS, ROOT, SETTINGS } from './CONSTANTS';
 
 function RouterConfig() {
