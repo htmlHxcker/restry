@@ -6,9 +6,6 @@
     "@heroicons/react": "^1.0.6",
     "@hookform/error-message": "^2.0.0",
     "@lwc/eslint-plugin-lwc": "^1.1.1",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -19,20 +16,7 @@
     "react-scripts": "5.0.0",
     "sass": "^1.49.0",
     "tsc-files": "^1.1.3",
-    "typescript": "^4.6.3",
-    "web-vitals": "^0.2.4",
-    "workbox-background-sync": "^5.1.4",
-    "workbox-broadcast-update": "^5.1.4",
-    "workbox-cacheable-response": "^5.1.4",
-    "workbox-core": "^5.1.4",
-    "workbox-expiration": "^5.1.4",
-    "workbox-google-analytics": "^5.1.4",
-    "workbox-navigation-preload": "^5.1.4",
-    "workbox-precaching": "^5.1.4",
-    "workbox-range-requests": "^5.1.4",
-    "workbox-routing": "^5.1.4",
-    "workbox-strategies": "^5.1.4",
-    "workbox-streams": "^5.1.4"
+    "typescript": "^4.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,8 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint",
-    "lint-staged": "lint-staged --config .lintstagedrc.json",
-    "prepare": "npx husky-init && husky install"
+    "lint-staged": "lint-staged --config .lintstagedrc.json"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +45,9 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "@types/react": "^17.0.43",
@@ -73,9 +59,11 @@
     "@typescript-eslint/parser": "^5.16.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.0",
