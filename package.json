@@ -25,7 +25,9 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "eslint",
-    "lint-staged": "lint-staged --config .lintstagedrc.json"
+    "lint-staged": "lint-staged --config .lintstagedrc.json",
+    "check-types": "tsc --project tsconfig.json --pretty --noEmit",
+    "check-format": "npm run prettier -- --list-different"
   },
   "eslintConfig": {
     "extends": [
