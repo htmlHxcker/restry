@@ -1,39 +1,43 @@
-import { useState } from 'react';
-import ReactModal from 'react-modal';
-import { useForm, SubmitHandler } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
-import TaskItem from './TaskItem';
+import { useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import ReactModal from 'react-modal';
+
 import girlWithLaptop from '../../assets/girl-with-laptop.png';
+
+import TaskItem from './TaskItem';
 import './index.scss';
 
 interface Task {
-  taskName: string,
-  taskLength: number,
-  done: boolean
+  taskName: string;
+  taskLength: number;
+  done: boolean;
 }
 
 function Tasks() {
-  const [tasks, setTasks] = useState<Task[]>(
-    [
-      {
-        taskName: 'Cook',
-        done: false,
-        taskLength: 120,
-      },
-      {
-        taskName: 'Wash',
-        done: false,
-        taskLength: 120,
-      },
-      {
-        taskName: 'Read',
-        done: false,
-        taskLength: 120,
-      },
-    ],
-  );
+  const [tasks, setTasks] = useState<Task[]>([
+    {
+      taskName: 'Cook',
+      done: false,
+      taskLength: 120,
+    },
+    {
+      taskName: 'Wash',
+      done: false,
+      taskLength: 120,
+    },
+    {
+      taskName: 'Read',
+      done: false,
+      taskLength: 120,
+    },
+  ]);
   const [showModal, setShowModal] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm<Task>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Task>();
 
   const handleAddition: SubmitHandler<Task> = (data: Task) => {
     setTasks([...tasks, data]);
@@ -56,7 +60,9 @@ function Tasks() {
       <h2 className="text--white heading--3 page__title">Tasks</h2>
       <div>
         <ul>
-          {tasks.map((task) => <TaskItem task={task} key={Math.random() * 1000} />)}
+          {tasks.map((task) => (
+            <TaskItem task={task} key={Math.random() * 1000} />
+          ))}
         </ul>
       </div>
 
@@ -77,22 +83,51 @@ function Tasks() {
         <div className="modal__form container">
           <form onSubmit={handleSubmit(handleAddition)}>
             <div>
-              <label htmlFor="taskName" className="form__label">What do you want to work on?</label>
-              <input type="text" {...register('taskName', formOptions.taskName)} className="form__input" />
-              <ErrorMessage errors={errors} name="taskName" as="p" className="form__error-message" />
+              <label htmlFor="taskName" className="form__label">
+                What do you want to work on?
+              </label>
+              <input
+                type="text"
+                {...register('taskName', formOptions.taskName)}
+                className="form__input"
+              />
+              <ErrorMessage
+                errors={errors}
+                name="taskName"
+                as="p"
+                className="form__error-message"
+              />
             </div>
             <div>
-              <label htmlFor="taskLength" className="form__label">For how long?</label>
-              <input type="number" {...register('taskLength', formOptions.taskLength)} className="form__input" />
-              <ErrorMessage errors={errors} name="taskLength" as="p" className="form__error-message" />
+              <label htmlFor="taskLength" className="form__label">
+                For how long?
+              </label>
+              <input
+                type="number"
+                {...register('taskLength', formOptions.taskLength)}
+                className="form__input"
+              />
+              <ErrorMessage
+                errors={errors}
+                name="taskLength"
+                as="p"
+                className="form__error-message"
+              />
             </div>
 
-            <button type="submit" className="button--primary">Create Task</button>
+            <button type="submit" className="button--primary">
+              Create Task
+            </button>
           </form>
         </div>
-
       </ReactModal>
-      <button type="button" className="button--primary tasks__button" onClick={() => setShowModal(true)}>New Task</button>
+      <button
+        type="button"
+        className="button--primary tasks__button"
+        onClick={() => setShowModal(true)}
+      >
+        New Task
+      </button>
     </div>
   );
 }

@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types';
 import { DotsHorizontalIcon } from '@heroicons/react/outline';
+import PropTypes from 'prop-types';
 import './TaskItem.scss';
 
 interface TaskItemProps {
   task: {
-    taskName: string,
-    taskLength: number,
-    done: boolean
-  }
+    taskName: string;
+    taskLength: number;
+    done: boolean;
+  };
 }
 
 function TaskItem({ task }: TaskItemProps) {

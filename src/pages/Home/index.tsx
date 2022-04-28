@@ -1,5 +1,5 @@
-import Tasks from './components/Tasks';
 import Pomodoro from './components/Pomodoro';
+import Tasks from './components/Tasks';
 import './home.scss';
 
 function Home() {
