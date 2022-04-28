@@ -6,16 +6,14 @@ on:
   pull_request:
     branches:
       - master
-  workflow_dispatch:
 jobs:
-  build:
+  all-cli-check:
     runs-on: ubuntu-latest
-
     steps:
-        uses: actions/checkout@v3
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
         with:
-          node-version: 14.x
+          node-version: '14.16'
       - run: yarn install
       - run: yarn build
       - run: yarn lint
