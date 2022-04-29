@@ -19,7 +19,7 @@ function Timer() {
   useEffect(() => {
     const timerId = setInterval(() => {
       setTimeLeft(countDown(1500));
-      document.title = `⏲${formatTime(timeLeft)} | Restry`;
+      document.title = `${formatTime(timeLeft)} | Restry`;
       setStrokeDashArray(calculateStrokeDashArray());
     }, 1000);
     return () => clearInterval(timerId);
