@@ -3,17 +3,13 @@ import PropTypes from 'prop-types';
 import './TaskItem.scss';
 
 interface TaskItemProps {
-  task: {
-    taskName: string;
-    taskLength: number;
-    done: boolean;
-  };
+  taskName: string;
 }
 
-function TaskItem({ task }: TaskItemProps) {
+function TaskItem({ taskName }: TaskItemProps) {
   return (
     <li className="task__item text--dark-blue flex justify-between">
-      {task.taskName}
+      {taskName}
       <span>
         <DotsHorizontalIcon className="task__item__menu" />
       </span>
@@ -22,6 +18,6 @@ function TaskItem({ task }: TaskItemProps) {
 }
 
 TaskItem.propTypes = {
-  task: PropTypes.string.isRequired,
+  taskName: PropTypes.string.isRequired,
 };
 export default TaskItem;
