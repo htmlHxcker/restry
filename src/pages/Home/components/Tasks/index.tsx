@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import ReactModal from 'react-modal';
 
-import girlWithLaptop from '../../assets/girl-with-laptop.png';
+import girlWithLaptop from '@/pages/Home/assets/girl-with-laptop.png';
 
 import TaskItem from './TaskItem';
 import './index.scss';
@@ -61,7 +61,7 @@ function Tasks() {
       <div>
         <ul>
           {tasks.map((task) => (
-            <TaskItem task={task} key={Math.random() * 1000} />
+            <TaskItem taskName={task.taskName} key={Math.random() * 1000} />
           ))}
         </ul>
       </div>
