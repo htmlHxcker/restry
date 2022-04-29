@@ -1,12 +1,18 @@
 import { NavLink } from 'react-router-dom';
 
-import { ACHIEVEMENTS, ROOT, SETTINGS } from '../../navigation/CONSTANTS';
+import logo from '@/assets/logo.svg';
+import { ACHIEVEMENTS, ROOT, SETTINGS } from '@/navigation/CONSTANTS';
+
 import './navbar.scss';
 
 function NavBar() {
   return (
     <header className="flex justify-between items-center">
-      <h1 className="logo">Restry</h1>
+      <img
+        className="logo"
+        src={logo}
+        alt="Restry Logo featuring a pink lotus and whit highlights"
+      />
       <nav>
         <NavLink
           to={ROOT}
