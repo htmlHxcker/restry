@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import logo from '@/assets/logo.svg';
-import { ACHIEVEMENTS, ROOT, SETTINGS } from '@/navigation/CONSTANTS';
+import { ACHIEVEMENTS, ROOT, SETTINGS } from '@/routes/CONSTANTS';
 
 import './navbar.scss';
 
