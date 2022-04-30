@@ -23,6 +23,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "eject": "react-scripts eject",
     "lint": "eslint",
     "lint-staged": "lint-staged --config .lintstagedrc.json",

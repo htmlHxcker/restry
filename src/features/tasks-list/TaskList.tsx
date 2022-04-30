@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import ReactModal from 'react-modal';
 
-import girlWithLaptop from '@/pages/Home/assets/girl-with-laptop.png';
+import girlWithLaptop from '@/assets/girl-with-laptop.png';
 
-import TaskItem from './TaskItem';
-import './index.scss';
+import { TaskItem } from './TaskItem';
+import './TaskItem.scss';
+import './TasksList.scss';
 
 interface Task {
   taskName: string;
@@ -14,24 +15,8 @@ interface Task {
   done: boolean;
 }
 
-function Tasks() {
-  const [tasks, setTasks] = useState<Task[]>([
-    {
-      taskName: 'Cook',
-      done: false,
-      taskLength: 120,
-    },
-    {
-      taskName: 'Wash',
-      done: false,
-      taskLength: 120,
-    },
-    {
-      taskName: 'Read',
-      done: false,
-      taskLength: 120,
-    },
-  ]);
+export function TasksList() {
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [showModal, setShowModal] = useState(false);
   const {
     register,
@@ -131,5 +116,3 @@ function Tasks() {
     </div>
   );
 }
-
-export default Tasks;

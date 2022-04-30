@@ -6,7 +6,7 @@ interface TaskItemProps {
   taskName: string;
 }
 
-function TaskItem({ taskName }: TaskItemProps) {
+export function TaskItem({ taskName }: TaskItemProps) {
   return (
     <li className="task__item text--dark-blue flex justify-between">
       {taskName}
@@ -20,4 +20,3 @@ function TaskItem({ taskName }: TaskItemProps) {
 TaskItem.propTypes = {
   taskName: PropTypes.string.isRequired,
 };
-export default TaskItem;

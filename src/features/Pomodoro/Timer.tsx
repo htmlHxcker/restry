@@ -1,22 +1,25 @@
 import { useState, useEffect } from 'react';
 
-import countDown, { formatTime } from './utils';
-import './timer.scss';
+import countDown from './utils/countDown';
+import formatTime from './utils/formatTime';
+import './Timer.scss';
 
 const FULL_DASH_ARRAY = 283;
 
-function Timer() {
+export function Timer() {
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const [strokeDashArray, setStrokeDashArray] = useState<string>('0 283');
 
-  function calculateTimeFraction(): number {
-    const rawTimeFraction = timeLeft / 1500;
-    return rawTimeFraction - (1 / 1500) * (1 - rawTimeFraction);
-  }
-  function calculateStrokeDashArray(): string {
-    return `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
-  }
   useEffect(() => {
+    function calculateStrokeDashArray(): string {
+      return `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
+    }
+
+    function calculateTimeFraction(): number {
+      const rawTimeFraction = timeLeft / 1500;
+      return rawTimeFraction - (1 / 1500) * (1 - rawTimeFraction);
+    }
+
     const timerId = setInterval(() => {
       setTimeLeft(countDown(1500));
       document.title = `${formatTime(timeLeft)} | Restry`;
@@ -45,5 +48,3 @@ function Timer() {
     </div>
   );
 }
-
-export default Timer;
