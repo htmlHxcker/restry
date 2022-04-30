@@ -1,0 +1,17 @@
+@import '../../styles/main.scss';
+
+.pomodoro {
+  display: none;
+}
+
+@media only screen and (min-width: $laptop) {
+  .pomodoro {
+    display: grid;
+    place-items: center;
+    width: 50%;
+  }
+  .pomodoro__control-icons {
+    min-width: 1.8rem;
+    height: auto;
+  }
+}

@@ -1,9 +1,9 @@
 import { PauseIcon, PlayIcon } from '@heroicons/react/outline';
 
-import './index.scss';
-import Timer from './Timer';
+import './Pomodoro.scss';
+import { Timer } from './Timer';
 
-function Pomodoro() {
+export function Pomodoro() {
   return (
     <div className="pomodoro">
       <Timer />
@@ -33,5 +33,3 @@ function Pomodoro() {
     </div>
   );
 }
-
-export default Pomodoro;
