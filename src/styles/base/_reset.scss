@@ -1,8 +1,7 @@
-
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*  Reset Margins */
@@ -13,24 +12,24 @@ h3,
 p,
 figure,
 picture {
-	margin: 0;
+  margin: 0;
 }
 
 /* Set up the body */
 body {
-	font-family: $ff-dm-sans;
-	font-size: $fs-400;
-	color: hsl($clr-light-blue-grey);
-	background-color: hsl($clr-ebony-clay);
-	line-height: 1.5;
-	min-height: 100vh;
+  font-family: $ff-jost;
+  font-size: $fs-400;
+  color: hsl($clr-light-blue-grey);
+  background-color: hsl($clr-ebony-clay);
+  line-height: 1.5;
+  min-height: 100vh;
 }
 
 /* Make Images easier to work with */
 img,
 picture {
-	max-width: 100%;
-	display: block;
+  max-width: 100%;
+  display: block;
 }
 
 /* Make form elements easier to work with */
@@ -38,18 +37,18 @@ input,
 button,
 textarea,
 select {
-	border: none;
-	font: inherit;
+  border: none;
+  font: inherit;
 }
 
 /* Remove animations for people who have turned them off */
 @media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
