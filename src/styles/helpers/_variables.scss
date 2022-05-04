@@ -4,8 +4,6 @@ $clr-white: 60 100% 100%;
 $clr-light-blue-grey: 230 58% 82%;
 $clr-cavern-pink: 351 60% 83%;
 
-
-
 /* font sizes */
 $fs-400: 1.125rem;
 $fs-500: 1.25rem;
@@ -18,9 +16,9 @@ $fs-900: 3.5rem;
 $mobile-sm: 320px;
 $mobile-md: 375px;
 $mobile-lg: 425px;
-$tablet:768px;
-$laptop:1024px;
+$tablet: 768px;
+$laptop: 1024px;
 
-/* font families */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
-$ff-dm-sans: 'DM Sans', sans-serif;
+/* fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+$ff-jost: 'Jost', sans-serif;
