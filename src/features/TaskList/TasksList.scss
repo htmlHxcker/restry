@@ -9,24 +9,7 @@ ul {
   max-height: 60vh;
   overflow-y: scroll;
 }
-.tasks__button {
-  width: 80%;
-}
-.modal__overlay {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.3);
-  position: fixed;
-  inset: 0px;
-}
 
-.form__label {
-  line-height: 2;
-  text-align: left;
-  display: block;
-  margin-bottom: 1.3rem;
-  margin-top: 0.8rem;
-  font-size: $fs-500;
-}
 .form__input {
   display: block;
   border-radius: 10px;
