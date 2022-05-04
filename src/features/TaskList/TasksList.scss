@@ -1,6 +1,6 @@
 @import '../../styles/main.scss';
 
-.tasks {
+.tasks-list {
   min-width: 100%;
 }
 ul {
@@ -18,26 +18,7 @@ ul {
   position: fixed;
   inset: 0px;
 }
-.modal {
-  position: absolute;
-  top: 8rem;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 2rem 2rem 0 0;
-  background-color: hsl($clr-light-blue-grey);
-  color: hsl($clr-white);
-  padding: 14px;
-}
-.container {
-  padding: 3rem;
-}
-.modal__title {
-  display: none;
-}
-.modal__form {
-  color: hsl($clr-ebony-clay);
-}
+
 .form__label {
   line-height: 2;
   text-align: left;
@@ -62,18 +43,19 @@ ul {
 }
 
 @media only screen and (min-width: $mobile-lg) {
-  .tasks {
+  .tasks-list {
     min-width: 50%;
   }
-  .modal {
-    inset: 4rem 8rem;
-    border-radius: 10px;
-    display: flex;
-    padding: 0;
+  ul {
+    min-height: 40vh;
+    max-height: 45vh;
   }
-  .modal__title {
-    display: block;
-    background-color: hsl($clr-ebony-clay);
-    width: 30%;
+  .tasks__illustration {
+    height: 20rem;
+    width: auto;
+  }
+  .tasks-list--empty {
+    display: grid;
+    place-items: center;
   }
 }
