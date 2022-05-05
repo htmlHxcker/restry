@@ -1,0 +1,57 @@
+@import '../../styles/main.scss';
+
+.tasks-list {
+  min-width: 100%;
+}
+.tasks-list--empty {
+  margin-top: 3rem;
+}
+ul {
+  padding: 0;
+  margin-top: 2rem;
+  max-height: 58vh;
+  overflow-y: scroll;
+}
+.new-task-form__container {
+  border-radius: 10px;
+  margin: 0.5rem;
+  background-color: hsl($clr-white);
+  padding: 0.8rem;
+}
+.new-task-form__input {
+  border-radius: 10px;
+  padding: 0.7rem;
+  width: 100%;
+  background-color: hsl($clr-grey);
+  margin-bottom: 0.5rem;
+}
+.new-task-form__error-message {
+  color: #bf1650;
+}
+.new-task-form__error-message::before {
+  display: inline;
+  content: '⚠ ';
+}
+.new-task-form__submit {
+  padding: 0.7rem;
+  width: 100%;
+  margin: 0;
+}
+
+@media only screen and (min-width: $mobile-lg) {
+  .tasks-list {
+    min-width: 50%;
+  }
+  ul {
+    min-height: 40vh;
+    max-height: 45vh;
+  }
+  .tasks__illustration {
+    height: 20rem;
+    width: auto;
+  }
+  .tasks-list--empty {
+    display: grid;
+    place-items: center;
+  }
+}
