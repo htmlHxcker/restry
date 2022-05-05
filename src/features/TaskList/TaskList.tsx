@@ -1,6 +1,7 @@
 import { ErrorMessage } from '@hookform/error-message';
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { v4 as uuidv4 } from 'uuid';
 
 import NoTasks from './assets/no-tasks.svg';
 import { TaskItem } from './TaskItem';
@@ -10,6 +11,7 @@ import './TasksList.scss';
 interface Task {
   taskName: string;
   done: boolean;
+  id: string;
 }
 
 export function TasksList() {
@@ -21,7 +23,7 @@ export function TasksList() {
   } = useForm<Task>();
 
   const handleAddition: SubmitHandler<Task> = (data: Task) => {
-    setTasks([...tasks, data]);
+    setTasks([...tasks, { ...data, id: uuidv4() }]);
   };
 
   const formOptions = {
