@@ -3,26 +3,39 @@
 .tasks-list {
   min-width: 100%;
 }
+.tasks-list--empty {
+  margin-top: 3rem;
+}
 ul {
   padding: 0;
   margin-top: 2rem;
   max-height: 60vh;
   overflow-y: scroll;
 }
-
-.form__input {
-  display: block;
+.new-task-form__container {
   border-radius: 10px;
+  margin: 0.5rem;
+  background-color: hsl($clr-white);
+  padding: 0.8rem;
+}
+.new-task-form__input {
+  border-radius: 10px;
+  padding: 0.7rem;
   width: 100%;
-  padding: 0.8rem 0.5rem;
+  background-color: hsl($clr-grey);
   margin-bottom: 0.5rem;
 }
-.form__error-message {
+.new-task-form__error-message {
   color: #bf1650;
 }
-.form__error-message::before {
+.new-task-form__error-message::before {
   display: inline;
   content: '⚠ ';
+}
+.new-task-form__submit {
+  padding: 0.7rem;
+  width: 100%;
+  margin: 0;
 }
 
 @media only screen and (min-width: $mobile-lg) {
