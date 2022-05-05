@@ -3,7 +3,7 @@ import { TasksList } from '@/features/TaskList';
 
 function Home() {
   return (
-    <div className="flex">
+    <div className="flex items-center">
       <TasksList />
       <Pomodoro />
     </div>
