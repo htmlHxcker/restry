@@ -41,28 +41,31 @@ export function TasksList() {
         ) : (
           <div className="tasks-list--empty">
             <img src={NoTasks} alt="" className="tasks__illustration" />
-            <h3 className="heading--4 text--center">No tasks...yet</h3>
           </div>
         )}
       </div>
 
       <form onSubmit={handleSubmit(handleAddition)}>
-        <div>
-          <label htmlFor="taskName" className="form__label sr-only">
+        <div className="new-task-form__container">
+          <label htmlFor="taskName" className="new-task-form__label sr-only">
             What do you want to work on?
           </label>
           <input
             type="text"
             {...register('taskName', formOptions.taskName)}
-            className="form__input"
+            className="new-task-form__input"
             placeholder="What do you want to work on?"
           />
-          <ErrorMessage errors={errors} name="taskName" as="p" className="form__error-message" />
+          <ErrorMessage
+            errors={errors}
+            name="taskName"
+            as="p"
+            className="new-task-form__error-message"
+          />
+          <button type="submit" className="button--primary new-task-form__submit">
+            Create Task
+          </button>
         </div>
-
-        <button type="submit" className="button--primary">
-          Create Task
-        </button>
       </form>
     </div>
   );
