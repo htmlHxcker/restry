@@ -1,9 +1,6 @@
-import { setArrayItem } from '@/utils/localStorage';
-
 import { taskGenerator } from './data-generator';
 
-export const createTask = async () => {
+export const createTask = () => {
   const task = taskGenerator();
-  setArrayItem('test:task', task);
   return task;
 };
