@@ -9,7 +9,7 @@ module.exports = {
   extends: ['eslint:recommended'],
   overrides: [
     {
-      files: ['**/*.ts', '**/*.tsx'],
+      files: ['**/*.ts', '**/*.tsx', '**/*.test.js', '**/*.spec.js', '**/*.spec.jsx'],
       parser: '@typescript-eslint/parser',
       settings: {
         react: { version: 'detect' },
@@ -21,6 +21,7 @@ module.exports = {
         browser: true,
         node: true,
         es6: true,
+        'jest/globals': true,
       },
       extends: [
         'eslint:recommended',
@@ -35,6 +36,7 @@ module.exports = {
         'plugin:testing-library/react',
         'plugin:jest-dom/recommended',
       ],
+      plugins: ['jest'],
       rules: {
         'no-restricted-imports': [
           'error',
@@ -67,8 +69,12 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': ['off'],
         '@typescript-eslint/no-empty-function': ['off'],
         '@typescript-eslint/no-explicit-any': ['off'],
-
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+        'jest/no-disabled-tests': 'warn',
+        'jest/no-focused-tests': 'error',
+        'jest/no-identical-title': 'error',
+        'jest/prefer-to-have-length': 'warn',
+        'jest/valid-expect': 'error',
       },
     },
   ],
