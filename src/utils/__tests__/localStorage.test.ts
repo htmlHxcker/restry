@@ -11,7 +11,7 @@ describe('LocalStorage tests', () => {
     localStorage.clear();
 
     const task = createTask();
-    // The task has to be stringified because setArrayItem converts
+    // The generated task has to be stringified because setArrayItem converts
     // the value argument to a JSON string before passing it to local storage
     const stringifiedTask = JSON.stringify(task);
     setArrayItem('task', task);
