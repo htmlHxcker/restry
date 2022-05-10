@@ -1,5 +1,5 @@
 import { ErrorMessage } from '@hookform/error-message';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -18,6 +18,13 @@ export interface Task {
 
 export function TasksList() {
   const [tasks, setTasks] = useState<Task[]>([]);
+  useEffect(() => {
+    const tasksFromStore = JSON.parse(localStorage.getItem('tasks') || '[]');
+    if (tasksFromStore?.length >= 1) {
+      setTasks(tasksFromStore);
+    }
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -41,12 +48,12 @@ export function TasksList() {
         {tasks.length >= 1 ? (
           <ul>
             {tasks.map((task) => (
-              <TaskItem taskName={task.taskName} key={Math.random() * 1000} />
+              <TaskItem taskName={task.taskName} key={task.id} />
             ))}
           </ul>
         ) : (
           <div className="tasks-list--empty">
-            <img src={NoTasks} alt="" className="tasks__illustration" />
+            <img src={NoTasks} alt="No Tasks yet" className="tasks__illustration" />
           </div>
         )}
       </div>
