@@ -32,3 +32,8 @@ describe('Tests for Task list', () => {
     expect(container).toContainElement(TaskItem);
   });
 });
+
+afterAll(() => {
+  localStorage.clear();
+  jest.clearAllMocks();
+});
