@@ -26,4 +26,9 @@ describe('Tests for Task list', () => {
     const createdTask = screen.getByText(task.taskName);
     expect(createdTask).toBeInTheDocument();
   });
+  test('should fetch tasks from localstorage', () => {
+    const { container } = render(<TasksList />);
+    const TaskItem = screen.getByTestId('task-item');
+    expect(container).toContainElement(TaskItem);
+  });
 });
