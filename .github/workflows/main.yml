@@ -15,8 +15,19 @@ jobs:
         with:
           node-version: '14.x'
       - run: yarn install
-      - run: yarn lint
-      - run: yarn ci:test
       - run: yarn build
+      - run: yarn test:jest
+      - run: yarn lint
       - run: yarn check-format
       - run: yarn check-types
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14.16'
+      - uses: cypress-io/github-action@v2
+        with:
+          build: yarn build
+          start: yarn serve

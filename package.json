@@ -22,9 +22,10 @@
   },
   "scripts": {
     "start": "craco start",
+    "start:cli": "cross-env BROWSER=none craco start",
     "build": "craco build",
-    "test": "craco test",
-    "ci:test": "cross-env CI=true craco test",
+    "test:jest": "craco test",
+    "test:coverage": "cross-env CI=true yarn test:jest",
     "cy:install": "cypress install",
     "cy:open": "cypress open",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
