@@ -25,6 +25,8 @@
     "build": "craco build",
     "test": "craco test",
     "ci:test": "cross-env CI=true craco test",
+    "cy:install": "cypress install",
+    "cy:open": "cypress open",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "eject": "react-scripts eject",
     "lint": "eslint",
