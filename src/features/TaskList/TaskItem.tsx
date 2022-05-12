@@ -8,7 +8,7 @@ interface TaskItemProps {
 
 export function TaskItem({ taskName }: TaskItemProps) {
   return (
-    <li className="task__item text--dark-blue flex justify-between">
+    <li className="task__item text--dark-blue flex justify-between" data-testid="task-item">
       {taskName}
       <span>
         <DotsHorizontalIcon className="task__item__menu" />
