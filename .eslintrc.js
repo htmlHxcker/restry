@@ -35,6 +35,7 @@ module.exports = {
         'plugin:prettier/recommended',
         'plugin:testing-library/react',
         'plugin:jest-dom/recommended',
+        'plugin:cypress/recommended',
       ],
       plugins: ['jest'],
       rules: {
