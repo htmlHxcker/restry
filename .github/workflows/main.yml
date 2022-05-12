@@ -29,5 +29,6 @@ jobs:
           node-version: '14.x'
       - uses: cypress-io/github-action@v2
         with:
+          command: yarn e2e:ci
           build: yarn build
           start: yarn serve
