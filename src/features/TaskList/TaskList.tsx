@@ -1,6 +1,7 @@
 import { ErrorMessage } from '@hookform/error-message';
 import { useState, useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import toast, { Toaster } from 'react-hot-toast';
 import { v4 as uuidv4 } from 'uuid';
 
 import { setArrayItem } from '@/utils/localStorage';
@@ -35,6 +36,14 @@ export function TasksList() {
     const updatedTasks = [...tasks, { ...data, id: uuidv4() }];
     setArrayItem('tasks', updatedTasks);
     setTasks(updatedTasks);
+    toast(`New task succesfully created`, {
+      icon: '👏',
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+    });
   };
 
   const formOptions = {
@@ -80,6 +89,7 @@ export function TasksList() {
           </button>
         </div>
       </form>
+      <Toaster position="bottom-center" reverseOrder={false} />
     </div>
   );
 }
