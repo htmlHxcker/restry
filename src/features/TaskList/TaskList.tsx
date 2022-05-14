@@ -8,7 +8,6 @@ import { setArrayItem } from '@/utils/localStorage';
 
 import NoTasks from './assets/no-tasks.svg';
 import { TaskItem } from './TaskItem';
-import './TaskItem.scss';
 import './TasksList.scss';
 
 export interface Task {
