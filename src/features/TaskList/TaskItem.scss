@@ -8,6 +8,9 @@
   border-radius: 2rem;
   @extend %box-shadow;
 }
+.task__item__text {
+  max-width: 75%;
+}
 
 .task__item__menu {
   width: 1.8rem;
