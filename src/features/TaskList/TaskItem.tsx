@@ -11,8 +11,12 @@ export function TaskItem({ taskName }: TaskItemProps) {
     <li className="task__item text--dark-blue flex justify-between" data-testid="task-item">
       <p className="task__item__text">{taskName}</p>
       <span>
-        <TrashIcon className="task__item__menu" />
-        <PencilIcon className="task__item__menu" />
+        <button>
+          <TrashIcon className="task__item__menu" />
+        </button>
+        <button type="button">
+          <PencilIcon className="task__item__menu" />
+        </button>
       </span>
     </li>
   );
