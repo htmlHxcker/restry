@@ -1,4 +1,4 @@
-import { DotsHorizontalIcon } from '@heroicons/react/outline';
+import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
 import PropTypes from 'prop-types';
 import './TaskItem.scss';
 
@@ -11,7 +11,8 @@ export function TaskItem({ taskName }: TaskItemProps) {
     <li className="task__item text--dark-blue flex justify-between" data-testid="task-item">
       {taskName}
       <span>
-        <DotsHorizontalIcon className="task__item__menu" />
+        <TrashIcon className="task__item__menu" />
+        <PencilIcon className="task__item__menu" />
       </span>
     </li>
   );
