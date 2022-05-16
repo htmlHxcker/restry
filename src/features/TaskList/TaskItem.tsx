@@ -9,7 +9,11 @@ interface TaskItemProps {
 export function TaskItem({ taskName }: TaskItemProps) {
   return (
     <li className="task__item text--dark-blue flex justify-between" data-testid="task-item">
-      <p className="task__item__text">{taskName}</p>
+      <label className="form-control task__item__text flex">
+        <input type="checkbox" name="checkbox" />
+        {taskName}
+      </label>
+
       <span>
         <button
           type="button"
