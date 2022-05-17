@@ -13,7 +13,7 @@
   input[type='checkbox'] {
     appearance: none;
     background-color: #fff;
-    margin: 0;
+    margin: 0.6em;
     color: currentColor;
     font: inherit;
     width: 1.15rem;
@@ -21,6 +21,21 @@
     border: 0.15rem solid currentColor;
     border-radius: 0.15em;
     transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+
+  input[type='checkbox']::before {
+    content: '';
+    width: 0.65rem;
+    height: 0.65rem;
+    transform: scale(0);
+    transform: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em hsl($clr-ebony-clay);
+  }
+
+  input[type='checkbox']:checked::before {
+    transform: scale(1);
   }
 }
 .task__item__text {
