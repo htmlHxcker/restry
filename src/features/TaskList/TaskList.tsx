@@ -28,6 +28,7 @@ export function TasksList() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Task>();
 
@@ -35,8 +36,9 @@ export function TasksList() {
     const updatedTasks = [...tasks, { ...data, id: uuidv4() }];
     setArrayItem('tasks', updatedTasks);
     setTasks(updatedTasks);
+    reset({ taskName: '' });
     toast(`New task succesfully created`, {
-      icon: '👏',
+      icon: '👍',
       style: {
         borderRadius: '10px',
         background: '#333',
