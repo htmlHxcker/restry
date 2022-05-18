@@ -10,8 +10,8 @@ export function TaskItem({ taskName }: TaskItemProps) {
   return (
     <li className="task__item text--dark-blue flex justify-between" data-testid="task-item">
       <label className="form-control task__item__text flex">
-        <input type="checkbox" name="checkbox" />
-        {taskName}
+        <input type="checkbox" name="checkbox" onClick={() => {}} />
+        <span>{taskName}</span>
       </label>
 
       <span>
