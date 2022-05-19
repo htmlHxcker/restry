@@ -11,7 +11,7 @@ import { TaskItem } from './TaskItem';
 import './TasksList.scss';
 
 export interface Task {
-  taskName: string;
+  name: string;
   done: boolean;
   id: string;
 }
@@ -36,7 +36,7 @@ export function TasksList() {
     const updatedTasks = [...tasks, { ...data, id: uuidv4() }];
     setArrayItem('tasks', updatedTasks);
     setTasks(updatedTasks);
-    reset({ taskName: '' });
+    reset({ name: '' });
     toast(`New task succesfully created`, {
       icon: '👍',
       style: {
@@ -48,7 +48,7 @@ export function TasksList() {
   };
 
   const formOptions = {
-    taskName: { required: 'Task Name is required' },
+    name: { required: 'Task Name is required' },
   };
 
   return (
@@ -58,7 +58,7 @@ export function TasksList() {
         {tasks.length >= 1 ? (
           <ul>
             {tasks.map((task) => (
-              <TaskItem taskName={task.taskName} key={task.id} />
+              <TaskItem task={task} key={task.id} updateTasks={setTasks} />
             ))}
           </ul>
         ) : (
@@ -70,18 +70,18 @@ export function TasksList() {
 
       <form onSubmit={handleSubmit(handleAddition)}>
         <div className="new-task-form__container">
-          <label htmlFor="taskName" className="new-task-form__label sr-only">
+          <label htmlFor="name" className="new-task-form__label sr-only">
             What do you want to work on?
           </label>
           <input
             type="text"
-            {...register('taskName', formOptions.taskName)}
+            {...register('name', formOptions.name)}
             className="new-task-form__input"
             placeholder="What do you want to work on?"
           />
           <ErrorMessage
             errors={errors}
-            name="taskName"
+            name="name"
             as="p"
             className="new-task-form__error-message"
           />
