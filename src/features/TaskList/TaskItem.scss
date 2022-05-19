@@ -45,7 +45,7 @@
     transform: scale(1);
   }
   //This strikes the task through if the checkbox is checked
-  input[type='checkbox']:checked + span {
+  .done {
     text-decoration: line-through solid currentColor 0.2rem;
   }
 }
