@@ -1,5 +1,6 @@
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
 import PropTypes from 'prop-types';
+import toast from 'react-hot-toast';
 
 import { setArrayItem } from '@/utils/localStorage';
 
@@ -19,6 +20,7 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
     const filteredTasks = tasks.filter((task: Task) => task.id !== taskToDelete);
     setArrayItem('tasks', filteredTasks);
     updateTasks(filteredTasks);
+    toast(`Task succesfully deleted`);
   };
   return (
     <li className="task__item text--dark-blue flex justify-between" data-testid="task-item">
