@@ -37,14 +37,7 @@ export function TasksList() {
     setArrayItem('tasks', updatedTasks);
     setTasks(updatedTasks);
     reset({ name: '' });
-    toast(`New task succesfully created`, {
-      icon: '👍',
-      style: {
-        borderRadius: '10px',
-        background: '#333',
-        color: '#fff',
-      },
-    });
+    toast(`New task succesfully created`);
   };
 
   const formOptions = {
@@ -90,7 +83,14 @@ export function TasksList() {
           </button>
         </div>
       </form>
-      <Toaster position="bottom-center" reverseOrder={false} />
+      <Toaster
+        position="bottom-center"
+        reverseOrder={false}
+        toastOptions={{
+          icon: '👍',
+          style: { borderRadius: '10px', background: '	#b6bfec', color: '#242a47' },
+        }}
+      />
     </div>
   );
 }
