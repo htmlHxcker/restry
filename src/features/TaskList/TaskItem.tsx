@@ -1,6 +1,8 @@
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
 import PropTypes from 'prop-types';
 
+import { setArrayItem } from '@/utils/localStorage';
+
 import './TaskItem.scss';
 import { Task } from './TaskList';
 
@@ -13,14 +15,18 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
   const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
   const deleteTask = () => {
-    const tasksAfterDeletion = tasks.filter((filteredTask: []) => filteredTask.id !== task.id);
-    updateTasks(tasksAfterDeletion);
+    const taskToDelete = task.id;
+    const filteredTasks = tasks.filter((task: Task) => task.id !== taskToDelete);
+    setArrayItem('tasks', filteredTasks);
+    updateTasks(filteredTasks);
   };
   return (
     <li className="task__item text--dark-blue flex justify-between" data-testid="task-item">
       <label className="form-control task__item__text flex">
         <input type="checkbox" name="checkbox" onClick={() => {}} />
-        <span className={`${task.done ? 'checked' : ''}`}>{task.name}</span>
+        <span className={`${task.done ? 'done' : ''}`}>
+          <input type="text" value={task.name} className="bg--light-blue" onChange={() => {}} />
+        </span>
       </label>
 
       <span>
