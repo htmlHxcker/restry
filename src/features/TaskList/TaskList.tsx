@@ -33,7 +33,7 @@ export function TasksList() {
   } = useForm<Task>();
 
   const handleAddition: SubmitHandler<Task> = (data: Task) => {
-    const updatedTasks = [...tasks, { ...data, id: uuidv4() }];
+    const updatedTasks = [...tasks, { ...data, id: uuidv4(), done: false }];
     setArrayItem('tasks', updatedTasks);
     setTasks(updatedTasks);
     reset({ name: '' });
