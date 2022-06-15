@@ -36,6 +36,7 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
         <input
           type="checkbox"
           name="checkbox"
+          checked={task.done}
           onClick={() => {
             completeTask();
           }}
