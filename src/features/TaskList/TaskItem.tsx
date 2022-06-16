@@ -1,4 +1,4 @@
-import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
+import { TrashIcon } from '@heroicons/react/outline';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -24,13 +24,14 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
     updateTasks(filteredTasks);
     toast(`Task succesfully deleted`);
   }
-  function completeTask() {
+
+  function modifyTask(payload: { [key: string]: boolean | string }): void {
     const taskToComplete = task;
-    const completedTask = tasks.map((task: Task) =>
-      task.id !== taskToComplete.id ? task : { ...taskToComplete, done: !task.done }
+    const modifiedTasks = tasks.map((task: Task) =>
+      task.id !== taskToComplete.id ? task : { ...taskToComplete, ...payload }
     );
-    setArrayItem('tasks', completedTask);
-    updateTasks(completedTask);
+    setArrayItem('tasks', modifiedTasks);
+    updateTasks(modifiedTasks);
   }
   return (
     <li className="task__item text--dark-blue flex justify-between" data-testid="task-item">
@@ -40,31 +41,27 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
           name="checkbox"
           checked={task.done}
           onClick={() => {
-            completeTask();
+            modifyTask({ done: !task.done });
           }}
         />
         <span>
           <input
             type="text"
+            title="Edit Task"
+            aria-label="Form input to edit task containing task name"
             value={editValue}
             className={`bg--light-blue ${task.done ? 'done' : ''}`}
             onChange={(event) => {
               setEditValue(event?.target.value);
             }}
-            onBlur={() => {}}
+            onBlur={() => {
+              modifyTask({ name: editValue });
+            }}
           />
         </span>
       </label>
 
       <span>
-        <button
-          type="button"
-          aria-label="Edit Task"
-          title="Edit Task"
-          className="task__item__button"
-        >
-          <PencilIcon />
-        </button>
         <button
           type="button"
           aria-label="Delete Task"
