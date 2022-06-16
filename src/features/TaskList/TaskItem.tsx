@@ -1,5 +1,6 @@
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { setArrayItem } from '@/utils/localStorage';
@@ -13,6 +14,7 @@ interface TaskItemProps {
 }
 
 export function TaskItem({ task, updateTasks }: TaskItemProps) {
+  const [editValue, setEditValue] = useState(task.name);
   const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
   function deleteTask() {
@@ -44,9 +46,12 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
         <span>
           <input
             type="text"
-            value={task.name}
+            value={editValue}
             className={`bg--light-blue ${task.done ? 'done' : ''}`}
-            onChange={() => {}}
+            onChange={(event) => {
+              setEditValue(event?.target.value);
+            }}
+            onBlur={() => {}}
           />
         </span>
       </label>
