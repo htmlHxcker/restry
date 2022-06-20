@@ -39,7 +39,7 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
         <input
           type="checkbox"
           name="checkbox"
-          checked={task.done}
+          defaultChecked={task.done}
           onClick={() => {
             modifyTask({ done: !task.done });
           }}
