@@ -56,7 +56,7 @@ export function TasksList() {
           </ul>
         ) : (
           <div className="tasks-list--empty">
-            <img src={NoTasks} alt="No Tasks yet" className="tasks__illustration" />
+            <img src={NoTasks} alt="No tasks yet" className="tasks__illustration" />
           </div>
         )}
       </div>
@@ -78,7 +78,11 @@ export function TasksList() {
             as="p"
             className="new-task-form__error-message"
           />
-          <button type="submit" className="button--primary new-task-form__submit">
+          <button
+            type="submit"
+            className="button--primary new-task-form__submit"
+            aria-label="Create Task"
+          >
             Create Task
           </button>
         </div>
