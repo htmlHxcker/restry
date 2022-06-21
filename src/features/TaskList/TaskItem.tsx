@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { setArrayItem } from '@/utils/localStorage';
 
 import './TaskItem.scss';
-import { Task } from './TaskList';
+import { Task } from './TasksList';
 
 interface TaskItemProps {
   task: Task;
@@ -34,16 +34,18 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
     updateTasks(modifiedTasks);
   }
   return (
-    <li className="task__item text--dark-blue flex justify-between" data-testid="task-item">
-      <label className="form-control task__item__text flex">
-        <input
-          type="checkbox"
-          name="checkbox"
-          defaultChecked={task.done}
-          onClick={() => {
-            modifyTask({ done: !task.done });
-          }}
-        />
+    <li className="task__item text--dark-blue flex justify-between">
+      <span className="form-control task__item__text flex">
+        <label htmlFor="done">
+          <input
+            type="checkbox"
+            name="done"
+            defaultChecked={task.done}
+            onClick={() => {
+              modifyTask({ done: !task.done });
+            }}
+          />
+        </label>
         <span>
           <input
             type="text"
@@ -59,7 +61,7 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
             }}
           />
         </span>
-      </label>
+      </span>
 
       <span>
         <button
