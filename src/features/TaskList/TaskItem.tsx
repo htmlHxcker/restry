@@ -36,16 +36,14 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
   return (
     <li className="task__item text--dark-blue flex justify-between">
       <span className="form-control task__item__text flex">
-        <label htmlFor="done">
-          <input
-            type="checkbox"
-            name="done"
-            defaultChecked={task.done}
-            onClick={() => {
-              modifyTask({ done: !task.done });
-            }}
-          />
-        </label>
+        <input
+          type="checkbox"
+          aria-label="Mark as done"
+          defaultChecked={task.done}
+          onClick={() => {
+            modifyTask({ done: !task.done });
+          }}
+        />
         <span>
           <input
             type="text"
