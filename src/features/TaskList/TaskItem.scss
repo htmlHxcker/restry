@@ -8,8 +8,54 @@
   border-radius: 2rem;
   @extend %box-shadow;
 }
+.form-control {
+  place-items: center;
+  input[type='checkbox'] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0.6em;
+    color: currentColor;
+    font: inherit;
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 0.15rem solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
 
-.task__item__menu {
-  width: 1.8rem;
+  input[type='checkbox']:focus {
+    outline: max(2px, 0.15rem) solid currentColor;
+    outline-offset: max(2px, 0.15rem);
+  }
+
+  input[type='checkbox']::before {
+    content: '';
+    width: 0.65rem;
+    height: 0.65rem;
+    transform: scale(0);
+    transform: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em hsl($clr-ebony-clay);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  input[type='checkbox']:checked::before {
+    transform: scale(1);
+  }
+  //This strikes the task through if the checkbox is checked
+  .done {
+    text-decoration: line-through solid currentColor 0.2rem;
+  }
+}
+.task__item__text {
+  max-width: 75%;
+}
+
+.task__item__button {
+  width: 2.4rem;
   height: auto;
+  background: none;
+  cursor: pointer;
 }

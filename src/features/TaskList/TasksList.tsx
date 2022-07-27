@@ -1,17 +1,17 @@
 import { ErrorMessage } from '@hookform/error-message';
 import { useState, useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import toast, { Toaster } from 'react-hot-toast';
 import { v4 as uuidv4 } from 'uuid';
 
 import { setArrayItem } from '@/utils/localStorage';
 
-import NoTasks from './assets/no-tasks.svg';
+import NoTasks from './assets/NoTasks.svg';
 import { TaskItem } from './TaskItem';
-import './TaskItem.scss';
 import './TasksList.scss';
 
 export interface Task {
-  taskName: string;
+  name: string;
   done: boolean;
   id: string;
 }
@@ -28,17 +28,20 @@ export function TasksList() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Task>();
 
   const handleAddition: SubmitHandler<Task> = (data: Task) => {
-    const updatedTasks = [...tasks, { ...data, id: uuidv4() }];
+    const updatedTasks = [...tasks, { ...data, id: uuidv4(), done: false }];
     setArrayItem('tasks', updatedTasks);
     setTasks(updatedTasks);
+    reset({ name: '' });
+    toast(`New task succesfully created`);
   };
 
   const formOptions = {
-    taskName: { required: 'Task Name is required' },
+    name: { required: 'Task Name is required' },
   };
 
   return (
@@ -48,38 +51,50 @@ export function TasksList() {
         {tasks.length >= 1 ? (
           <ul>
             {tasks.map((task) => (
-              <TaskItem taskName={task.taskName} key={task.id} />
+              <TaskItem task={task} key={task.id} updateTasks={setTasks} />
             ))}
           </ul>
         ) : (
           <div className="tasks-list--empty">
-            <img src={NoTasks} alt="No Tasks yet" className="tasks__illustration" />
+            <img src={NoTasks} alt="No tasks yet" className="tasks__illustration" />
           </div>
         )}
       </div>
 
       <form onSubmit={handleSubmit(handleAddition)}>
         <div className="new-task-form__container">
-          <label htmlFor="taskName" className="new-task-form__label sr-only">
+          <label htmlFor="name" className="new-task-form__label sr-only">
             What do you want to work on?
           </label>
           <input
             type="text"
-            {...register('taskName', formOptions.taskName)}
+            {...register('name', formOptions.name)}
             className="new-task-form__input"
             placeholder="What do you want to work on?"
           />
           <ErrorMessage
             errors={errors}
-            name="taskName"
+            name="name"
             as="p"
             className="new-task-form__error-message"
           />
-          <button type="submit" className="button--primary new-task-form__submit">
+          <button
+            type="submit"
+            className="button--primary new-task-form__submit"
+            aria-label="Create Task"
+          >
             Create Task
           </button>
         </div>
       </form>
+      <Toaster
+        position="bottom-center"
+        reverseOrder={false}
+        toastOptions={{
+          icon: '👍',
+          style: { borderRadius: '10px', background: '	#b6bfec', color: '#242a47' },
+        }}
+      />
     </div>
   );
 }

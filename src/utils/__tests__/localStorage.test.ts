@@ -1,4 +1,4 @@
-import { createTask } from '../../test/test-utils';
+import { taskGenerator } from '../../test/data-generator';
 import { setArrayItem } from '../localStorage';
 
 beforeEach(() => {
@@ -10,7 +10,7 @@ describe('LocalStorage tests', () => {
   test('should set item to local storage', () => {
     localStorage.clear();
 
-    const task = createTask();
+    const task = taskGenerator();
     // The generated task has to be stringified because setArrayItem converts
     // the value argument to a JSON string before passing it to local storage
     const stringifiedTask = JSON.stringify(task);

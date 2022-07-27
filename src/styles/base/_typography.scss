@@ -18,18 +18,6 @@
   font-size: $fs-400;
 }
 
-.text--white {
-  color: hsl($clr-white);
-}
-.text--light-blue {
-  color: hsl($clr-light-blue-grey);
-}
-.text--dark-blue {
-  color: hsl($clr-ebony-clay);
-}
-.text--center {
-  text-align: center;
-}
 @media only screen and (min-width: $mobile-lg) {
   .page__title {
     display: none;
