@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { setArrayItem } from '@/utils/localStorage';
 
-import NoTasks from './assets/no-tasks.svg';
+import NoTasks from './assets/NoTasks.svg';
 import { TaskItem } from './TaskItem';
 import './TasksList.scss';
 
