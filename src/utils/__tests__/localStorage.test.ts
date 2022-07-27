@@ -1,5 +1,4 @@
-import { taskGenerator } from '@/test/data-generator';
-
+import { taskGenerator } from '../../test/data-generator';
 import { setArrayItem } from '../localStorage';
 
 beforeEach(() => {
