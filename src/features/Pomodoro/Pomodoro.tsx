@@ -1,9 +1,12 @@
-import { PauseIcon, PlayIcon } from '@heroicons/react/outline';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 
 import './Pomodoro.scss';
 import { Timer } from './Timer';
 
 export function Pomodoro() {
+  const [isPaused, setIsPaused] = useState(false);
   return (
     <div className="pomodoro">
       <Timer />
@@ -11,23 +14,28 @@ export function Pomodoro() {
         <button
           type="button"
           className="button--primary"
-          aria-label="Button to start Pomodoro timer"
+          aria-label="Button to increase timer duration"
         >
-          <PlayIcon className="pomodoro__control-icons" />
+          <FontAwesomeIcon icon={solid('plus')} />
         </button>
+
+        <button
+          type="button"
+          className="button--primary"
+          aria-label="Button to reduce timer duration"
+        >
+          <FontAwesomeIcon icon={solid('minus')} />
+        </button>
+
         <button
           type="submit"
           className="button--primary"
-          aria-label="Button to pause Pomodoro timer"
-        >
-          <PauseIcon className="pomodoro__control-icons" />
-        </button>
-        <button
-          type="submit"
-          className="button--primary"
           aria-label="Button to start Pomodoro timer"
+          onClick={() => {
+            setIsPaused(!isPaused);
+          }}
         >
-          Start Pomodoro
+          <FontAwesomeIcon icon={solid('play')} />
         </button>
       </div>
     </div>

@@ -1,4 +1,5 @@
-import { TrashIcon } from '@heroicons/react/outline';
+import { regular } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -71,7 +72,7 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
             deleteTask();
           }}
         >
-          <TrashIcon />
+          <FontAwesomeIcon icon={regular('trash-can')} />
         </button>
       </span>
     </li>
