@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
 import countDown from './utils/countDown';
@@ -5,10 +6,14 @@ import formatTime from './utils/formatTime';
 import './Timer.scss';
 
 const FULL_DASH_ARRAY = 283;
+interface TimerProps {
+  isPaused: boolean;
+}
 
-export function Timer() {
+export function Timer({ isPaused }: TimerProps) {
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const [strokeDashArray, setStrokeDashArray] = useState<string>('0 283');
+  console.log(isPaused);
 
   useEffect(() => {
     function calculateStrokeDashArray(): string {
@@ -47,3 +52,7 @@ export function Timer() {
     </div>
   );
 }
+
+Timer.propTypes = {
+  isPaused: PropTypes.bool.isRequired,
+};
