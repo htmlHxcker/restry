@@ -26,11 +26,16 @@ export function Timer({ isPaused }: TimerProps) {
     }
 
     const timerId = setInterval(() => {
-      setTimeLeft(countDown(1500));
-      setStrokeDashArray(calculateStrokeDashArray());
+      if (isPaused === true) {
+        return;
+      } else {
+        setTimeLeft(countDown(1500));
+        setStrokeDashArray(calculateStrokeDashArray());
+      }
     }, 1000);
     return () => clearInterval(timerId);
-  }, [timeLeft]);
+  }, [timeLeft, isPaused]);
+
   return (
     <div className="timer">
       <svg className="timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
