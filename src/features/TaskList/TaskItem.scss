@@ -9,6 +9,7 @@
   @extend %box-shadow;
 }
 .form-control {
+  width: 100%;
   place-items: center;
   input[type='checkbox'] {
     appearance: none;
@@ -43,6 +44,9 @@
 
   input[type='checkbox']:checked::before {
     transform: scale(1);
+  }
+  input[type='text'] {
+    width: inherit;
   }
   //This strikes the task through if the checkbox is checked
   .done {
