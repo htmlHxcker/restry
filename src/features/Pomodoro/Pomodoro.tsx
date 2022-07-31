@@ -6,29 +6,20 @@ import './Pomodoro.scss';
 import { Timer } from './Timer';
 
 export function Pomodoro() {
-  const [isPaused, setIsPaused] = useState(false);
+  const [isPaused, setIsPaused] = useState(true);
   return (
     <div className="pomodoro">
-      <Timer />
+      <Timer isPaused={isPaused} />
       <div className="flex">
-        <button
-          type="button"
-          className="button--primary"
-          aria-label="Button to increase timer duration"
-        >
+        <button className="button--primary" aria-label="Button to increase timer duration">
           <FontAwesomeIcon icon={solid('plus')} />
         </button>
 
-        <button
-          type="button"
-          className="button--primary"
-          aria-label="Button to reduce timer duration"
-        >
+        <button className="button--primary" aria-label="Button to reduce timer duration">
           <FontAwesomeIcon icon={solid('minus')} />
         </button>
 
         <button
-          type="submit"
           className="button--primary"
           aria-label="Button to start Pomodoro timer"
           onClick={() => {
