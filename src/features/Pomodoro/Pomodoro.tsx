@@ -26,7 +26,11 @@ export function Pomodoro() {
             setIsPaused(!isPaused);
           }}
         >
-          <FontAwesomeIcon icon={solid('play')} />
+          {isPaused ? (
+            <FontAwesomeIcon icon={solid('play')} />
+          ) : (
+            <FontAwesomeIcon icon={solid('pause')} />
+          )}
         </button>
       </div>
     </div>
