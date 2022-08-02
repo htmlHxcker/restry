@@ -1,13 +1,17 @@
 {
   "name": "restry",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
-    "@faker-js/faker": "^6.3.1",
-    "@heroicons/react": "^1.0.6",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-regular-svg-icons": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@hookform/error-message": "^2.0.0",
     "@lwc/eslint-plugin-lwc": "^1.1.1",
+    "babel-plugin-macros": "^3.1.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -28,8 +32,9 @@
     "test:jest": "craco test",
     "test:coverage": "cross-env CI=true yarn test:jest",
     "cy:install": "cypress install",
-    "cy:open": "cypress open --config-file development.json",
-    "e2e:ci": "cypress run --config-file production.json",
+    "cy:open": "cypress open",
+    "e2e:ci": "cypress run",
+    "serve": "serve --no-clipboard --single --listen 3000 build",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "eject": "react-scripts eject",
     "lint": "eslint",
@@ -55,6 +60,11 @@
       "!src/test/**/*.{js,jsx,ts,tsx}"
     ]
   },
+  "babelMacros": {
+    "fontawesome-svg-core": {
+      "license": "free"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -69,6 +79,7 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.16.7",
+    "@faker-js/faker": "^6.3.1",
     "@testing-library/cypress": "^8.0.3",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
@@ -84,7 +95,7 @@
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "cross-env": "^7.0.3",
-    "cypress": "^9.6.1",
+    "cypress": "10.3.1",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -100,7 +111,9 @@
     "husky": "^7.0.0",
     "jest-localstorage-mock": "^2.4.21",
     "lint-staged": "^12.3.7",
+    "serve": "^14.0.1",
     "prettier": "^2.6.2",
+    "jest": "^28.1.3",
     "ts-jest": "^28.0.2"
   }
 }

@@ -27,8 +27,11 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '14.x'
-      - uses: cypress-io/github-action@v2
+      - uses: cypress-io/github-action@v4.1.0
         with:
           command: yarn e2e:ci
           build: yarn build
           start: yarn serve
+          wait-on: http://localhost:3000
+          record: false
+          config-file: cypress.config.ts

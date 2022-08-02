@@ -1,4 +1,5 @@
-import { TrashIcon } from '@heroicons/react/outline';
+import { regular } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -26,9 +27,9 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
   }
 
   function modifyTask(payload: { [key: string]: boolean | string }): void {
-    const taskToComplete = task;
+    const taskToModify = task;
     const modifiedTasks = tasks.map((task: Task) =>
-      task.id !== taskToComplete.id ? task : { ...taskToComplete, ...payload }
+      task.id !== taskToModify.id ? task : { ...taskToModify, ...payload }
     );
     setArrayItem('tasks', modifiedTasks);
     updateTasks(modifiedTasks);
@@ -44,21 +45,19 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
             modifyTask({ done: !task.done });
           }}
         />
-        <span>
-          <input
-            type="text"
-            title="Edit Task"
-            aria-label="Form input to edit task containing task name"
-            value={editValue}
-            className={`bg--light-blue ${task.done ? 'done' : ''}`}
-            onChange={(event) => {
-              setEditValue(event?.target.value);
-            }}
-            onBlur={() => {
-              modifyTask({ name: editValue });
-            }}
-          />
-        </span>
+        <input
+          type="text"
+          title="Edit Task"
+          aria-label="Form input to edit task containing task name"
+          value={editValue}
+          className={`bg--light-blue ${task.done ? 'done' : ''}`}
+          onChange={(event) => {
+            setEditValue(event?.target.value);
+          }}
+          onBlur={() => {
+            modifyTask({ name: editValue });
+          }}
+        />
       </span>
 
       <span>
@@ -71,7 +70,7 @@ export function TaskItem({ task, updateTasks }: TaskItemProps) {
             deleteTask();
           }}
         >
-          <TrashIcon />
+          <FontAwesomeIcon icon={regular('trash-can')} />
         </button>
       </span>
     </li>

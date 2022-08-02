@@ -1,13 +1,12 @@
 import { taskGenerator } from '@/test/data-generator';
 
-describe('Home page', () => {
+describe('Task section', () => {
   beforeEach(() => {
     cy.visit('/');
   });
 
   it('loads the home page', () => {
     cy.contains('Home');
-    cy.contains('Start Pomodoro');
   });
 
   it('should render empty tasks list', () => {
