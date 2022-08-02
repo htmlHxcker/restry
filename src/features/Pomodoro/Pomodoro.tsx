@@ -11,17 +11,13 @@ export function Pomodoro() {
     <div className="pomodoro">
       <Timer isPaused={isPaused} />
       <div className="flex">
-        <button className="button--primary" title="Cancel timer">
-          <FontAwesomeIcon icon={solid('multiply')} />
-        </button>
-
         <button className="button--primary" title="Restart timer">
           <FontAwesomeIcon icon={solid('refresh')} />
         </button>
 
         <button
           className="button--primary"
-          title="Start timer"
+          title={`${isPaused ? 'Start Timer' : 'Pause Timer'}`}
           onClick={() => {
             setIsPaused(!isPaused);
           }}
