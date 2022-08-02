@@ -65,7 +65,7 @@ export function Pomodoro() {
       <div className="flex">
         <button
           className="button--primary"
-          title="Restart timer"
+          title="Restart Timer"
           onClick={() => {
             resetTimer();
           }}
