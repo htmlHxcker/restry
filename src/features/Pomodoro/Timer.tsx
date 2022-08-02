@@ -15,6 +15,12 @@ export function Pomodoro() {
   const [strokeDashArray, setStrokeDashArray] = useState<string>(CIRCLE_ANIMATION_DIAMETER);
   const [isPaused, setIsPaused] = useState<boolean>(true);
 
+  function resetTimer() {
+    setTimeLeft(countDown(TIMER_DURATION_IN_SECONDS, true));
+    setIsPaused(true);
+    setStrokeDashArray(CIRCLE_ANIMATION_DIAMETER);
+  }
+
   useEffect(() => {
     // Thanks to https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/ for the circular progress timer
     function calculateStrokeDashArray(): string {
@@ -25,6 +31,7 @@ export function Pomodoro() {
       const rawTimeFraction = timeLeft / 1500;
       return rawTimeFraction - (1 / 1500) * (1 - rawTimeFraction);
     }
+
     if (isPaused === true) {
       return;
     }
@@ -56,7 +63,13 @@ export function Pomodoro() {
         <span className="timer__label items-center justify-center">{formatTime(timeLeft)}</span>
       </div>
       <div className="flex">
-        <button className="button--primary" title="Restart timer">
+        <button
+          className="button--primary"
+          title="Restart timer"
+          onClick={() => {
+            resetTimer();
+          }}
+        >
           <FontAwesomeIcon icon={solid('refresh')} />
         </button>
 
