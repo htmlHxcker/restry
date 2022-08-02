@@ -6,16 +6,19 @@ import formatTime from './utils/formatTime';
 import './Timer.scss';
 
 const FULL_DASH_ARRAY = 283;
+const TIMER_DURATION_IN_SECONDS = 1500;
+const CIRCLE_ANIMATION_DIAMETER = '0 283';
+
 interface TimerProps {
   isPaused: boolean;
 }
 
 export function Timer({ isPaused }: TimerProps) {
-  const [timeLeft, setTimeLeft] = useState<number>(0);
-  const [strokeDashArray, setStrokeDashArray] = useState<string>('0 283');
-  console.log(isPaused);
+  const [timeLeft, setTimeLeft] = useState<number>(TIMER_DURATION_IN_SECONDS);
+  const [strokeDashArray, setStrokeDashArray] = useState<string>(CIRCLE_ANIMATION_DIAMETER);
 
   useEffect(() => {
+    // Thanks to https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/ for the circular progress timer
     function calculateStrokeDashArray(): string {
       return `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
     }
@@ -24,14 +27,12 @@ export function Timer({ isPaused }: TimerProps) {
       const rawTimeFraction = timeLeft / 1500;
       return rawTimeFraction - (1 / 1500) * (1 - rawTimeFraction);
     }
-
+    if (isPaused === true) {
+      return;
+    }
     const timerId = setInterval(() => {
-      if (isPaused === true) {
-        return;
-      } else {
-        setTimeLeft(countDown(1500));
-        setStrokeDashArray(calculateStrokeDashArray());
-      }
+      setTimeLeft(countDown(TIMER_DURATION_IN_SECONDS));
+      setStrokeDashArray(calculateStrokeDashArray());
     }, 1000);
     return () => clearInterval(timerId);
   }, [timeLeft, isPaused]);
