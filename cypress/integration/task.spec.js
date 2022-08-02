@@ -7,7 +7,6 @@ describe('Task section', () => {
 
   it('loads the home page', () => {
     cy.contains('Home');
-    cy.contains('Start Pomodoro');
   });
 
   it('should render empty tasks list', () => {
