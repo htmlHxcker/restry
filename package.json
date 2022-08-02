@@ -34,6 +34,7 @@
     "cy:install": "cypress install",
     "cy:open": "cypress open",
     "e2e:ci": "cypress run --config-file production.json",
+    "serve": "serve --no-clipboard --single --listen 3000 build",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "eject": "react-scripts eject",
     "lint": "eslint",
@@ -110,7 +111,9 @@
     "husky": "^7.0.0",
     "jest-localstorage-mock": "^2.4.21",
     "lint-staged": "^12.3.7",
+    "serve": "^14.0.1",
     "prettier": "^2.6.2",
+    "jest": "^28.1.3",
     "ts-jest": "^28.0.2"
   }
 }
