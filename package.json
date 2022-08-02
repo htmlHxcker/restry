@@ -33,7 +33,7 @@
     "test:coverage": "cross-env CI=true yarn test:jest",
     "cy:install": "cypress install",
     "cy:open": "cypress open",
-    "e2e:ci": "cypress run --config-file production.json",
+    "e2e:ci": "cypress run",
     "serve": "serve --no-clipboard --single --listen 3000 build",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "eject": "react-scripts eject",
