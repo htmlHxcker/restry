@@ -1,6 +1,6 @@
 import { taskGenerator } from '@/test/data-generator';
 
-describe('Home page', () => {
+describe('Task section', () => {
   beforeEach(() => {
     cy.visit('/');
   });
