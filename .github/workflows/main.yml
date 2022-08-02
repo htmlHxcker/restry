@@ -32,3 +32,6 @@ jobs:
           command: yarn e2e:ci
           build: yarn build
           start: yarn serve
+          wait-on: http://localhost:3000
+          record: false
+          config-file: cypress.config.ts
