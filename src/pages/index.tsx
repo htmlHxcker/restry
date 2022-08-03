@@ -12,11 +12,11 @@ function Home() {
         type="checkbox"
         name="Mobile view toggle"
         className="view-toggle"
+        aria-label="Toggle View"
         onClick={() => {
           setHidePomodoro(!hidePomodoro);
         }}
       />
-      <label htmlFor="Mobile view">Toggle View</label>
 
       <div className={`flex items-center ${hidePomodoro ? 'hide-pomodoro' : 'show-pomodoro'}`}>
         <TasksList />
