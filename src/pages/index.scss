@@ -1,0 +1,24 @@
+.view-toggle {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .view-toggle {
+    display: block;
+  }
+  .hide-pomodoro {
+    .pomodoro {
+      display: none;
+    }
+    .tasks-list {
+      display: block;
+    }
+  }
+  .show-pomodoro {
+    .pomodoro {
+      display: block;
+    }
+    .tasks-list {
+      display: none;
+    }
+  }
+}
