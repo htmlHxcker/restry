@@ -40,7 +40,7 @@ ul {
 .done {
   text-decoration: line-through;
 }
-@media only screen and (min-width: $mobile-lg) {
+@media only screen and (min-width: $tablet) {
   .tasks-list {
     min-width: 50%;
   }
