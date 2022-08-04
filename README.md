@@ -168,7 +168,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Acknowledgments
 
-Some resources and people were super helpful during the development of this app and I'll love to give thema shout out.
+Some resources and people were super helpful during the development of this app and I'll love to give them a shout out.
 
 - [CSS Tricks](https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/)
 - [Brian](https://github.com/willybeans)
