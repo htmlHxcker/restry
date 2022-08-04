@@ -1,15 +1,7 @@
-import { BrowserRouter } from 'react-router-dom';
-
-import NavBar from './components/NavBar';
-import RouterConfig from './routes/RouterConfig';
+import Home from './pages';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <NavBar />
-      <RouterConfig />
-    </BrowserRouter>
-  );
+  return <Home />;
 }
 
 export default App;
