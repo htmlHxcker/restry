@@ -98,7 +98,7 @@ Here's how you can run this project on your local computer.
 
 1. Clone the repo
    ```sh
-   https://github.com/htmlHxcker/restry
+   git clone https://github.com/htmlHxcker/restry.git
    ```
 2. Install NPM packages
    ```sh
@@ -178,7 +178,7 @@ Some resources and people were super helpful during the development of this app 
 
 [contributors-shield]: https://img.shields.io/github/contributors/htmlHxcker/restry.svg?style=for-the-badge
 [contributors-url]: https://github.com/htmlHxcker/restry/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forkshtmlHxcker/restry.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/htmlHxcker/restry.svg?style=for-the-badge
 [forks-url]: https://github.com/htmlHxcker/restry/network/members
 [stars-shield]: https://img.shields.io/github/stars/htmlHxcker/restry.svg?style=for-the-badge
 [stars-url]: https://github.com/htmlHxcker/restry/stargazers
