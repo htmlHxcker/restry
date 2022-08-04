@@ -17,9 +17,3 @@
 .paragraph {
   font-size: $fs-400;
 }
-
-@media only screen and (min-width: $mobile-lg) {
-  .page__title {
-    display: none;
-  }
-}

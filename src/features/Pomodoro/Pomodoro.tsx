@@ -22,7 +22,6 @@ export function Pomodoro() {
   }
 
   useEffect(() => {
-    // Thanks to https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/ for the circular progress timer
     function calculateStrokeDashArray(): string {
       return `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
     }

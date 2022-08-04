@@ -1,0 +1,31 @@
+@import '../styles/helpers/variables';
+.view-toggle {
+  display: none;
+}
+
+@media only screen and (max-width: $tablet) {
+  .logo {
+    display: none;
+  }
+  .view-toggle {
+    display: block;
+    width: 80%;
+  }
+  .hide-pomodoro {
+    .pomodoro {
+      display: none;
+    }
+    .tasks-list {
+      display: block;
+    }
+  }
+  .show-pomodoro {
+    .pomodoro {
+      display: block;
+      margin: auto;
+    }
+    .tasks-list {
+      display: none;
+    }
+  }
+}

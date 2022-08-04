@@ -5,10 +5,6 @@ describe('Task section', () => {
     cy.visit('/');
   });
 
-  it('loads the home page', () => {
-    cy.contains('Home');
-  });
-
   it('should render empty tasks list', () => {
     cy.get('.tasks-list--empty').should('exist');
   });

@@ -46,7 +46,6 @@ export function TasksList() {
 
   return (
     <div className="tasks-list">
-      <h2 className="text--white heading--3 page__title">Tasks</h2>
       <div>
         {tasks.length >= 1 ? (
           <ul>
@@ -60,7 +59,6 @@ export function TasksList() {
           </div>
         )}
       </div>
-
       <form onSubmit={handleSubmit(handleAddition)}>
         <div className="new-task-form__container">
           <label htmlFor="name" className="new-task-form__label sr-only">

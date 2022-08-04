@@ -41,7 +41,7 @@
   display: none;
 }
 
-@media only screen and (min-width: $laptop) {
+@media only screen and (min-width: $tablet) {
   .pomodoro {
     display: grid;
     place-items: center;

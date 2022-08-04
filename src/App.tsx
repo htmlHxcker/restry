@@ -1,14 +1,18 @@
-import { BrowserRouter } from 'react-router-dom';
-
-import NavBar from './components/NavBar';
-import RouterConfig from './routes/RouterConfig';
+import logo from './assets/logo.svg';
+import Home from './pages';
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <RouterConfig />
-    </BrowserRouter>
+    <>
+      <header className="flex justify-between items-center">
+        <img
+          className="logo"
+          src={logo}
+          alt="Restry Logo featuring a pink lotus and whit highlights"
+        />
+      </header>
+      <Home />
+    </>
   );
 }
 
