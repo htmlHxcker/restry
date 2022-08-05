@@ -185,7 +185,7 @@ Some resources and people were super helpful during the development of this app 
 [issues-shield]: https://img.shields.io/github/issues/htmlHxcker/restry.svg?style=for-the-badge
 [issues-url]: https://github.com/htmlHxcker/restry/issues
 [license-shield]: https://img.shields.io/github/license/htmlHxcker/restry.svg?style=for-the-badge
-[license-url]: https://github.com/htmlHxcker/restry/blob/master/LICENSE.txt
+[license-url]: https://github.com/htmlHxcker/restry/blob/master/LICENSE
 [product-screenshot]: ./src/assets/README/restry-home-desktop.png
 [typescript]: https://img.shields.io/badge/TypeScript-000000?style=for-the-badge&logo=TypeScript&logoColor=white
 [typescript-url]: https://www.typescriptlang.org/
