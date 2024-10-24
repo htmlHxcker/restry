@@ -16,9 +16,9 @@
   <h3 align="center">Restry</h3>
 
   <p align="center">
-    Create to-do lists and use the pomodoro technique to sharpen your focus.
+    Create to-do lists and use the Pomodoro technique to sharpen your focus.
     <br />
-    <a href="https://restry.netlify.com">View Demo</a>
+    <a href="https://restry.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/htmlHxcker/restry/issues/new?&template=bug_report.md">Report Bug</a>
     ·
